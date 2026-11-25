@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Baltazar Ferreira — Serigrafia em Portugal</title>
+<meta name="description" content="Fornecedor de serigrafia em Portugal há 25 anos: emulsões, tintas, telas, rodos e serviços de gravação de quadros. Entrega nacional e europeia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0e1a2b;--ink2:#44546a;--bg:#f5f7fa;--card:#fff;--line:#dfe4ec;--blue:#2f5d9e;--blue-d:#234a82;--blue-l:#e8eff9;--navy:#0b1626;--amber:#f0b429;--r:14px;--sp:8px;--shadow:0 1px 2px rgba(14,26,43,.05),0 8px 24px rgba(14,26,43,.06)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:16px/1.6 Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Manrope,Inter,sans-serif;line-height:1.15;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800}
+h2{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:800}
+h3{font-size:1.1rem;font-weight:700}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font:inherit;cursor:pointer}
+html{scrollbar-width:thin;scrollbar-color:#6f8fc0 #e9eef5}
+@supports selector(::-webkit-scrollbar){html{scrollbar-color:auto}
+::-webkit-scrollbar{width:13px;height:13px}
+::-webkit-scrollbar-track{background:#e9eef5}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#5b82bd,#2f5d9e);border-radius:99px;border:3px solid #e9eef5}
+::-webkit-scrollbar-thumb:hover{background:#234a82;border:3px solid #e9eef5}}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+.eyebrow{font:600 .78rem Inter;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+.lead{color:var(--ink2);font-size:1.1rem;max-width:62ch;margin-top:16px}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+input:focus-visible,textarea:focus-visible{outline:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:10px;border:1.5px solid transparent;font-weight:600;font-size:.95rem;transition:.18s;white-space:nowrap}
+.btn-p{background:var(--blue);color:#fff}.btn-p:hover{background:var(--blue-d)}
+.btn-o{background:transparent;border-color:var(--line);color:var(--ink)}.btn-o:hover{border-color:var(--blue);color:var(--blue)}
+.btn-w{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.35);color:#fff}.btn-w:hover{background:rgba(255,255,255,.2)}
+.btn-sm{padding:9px 14px;font-size:.85rem}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;gap:24px;height:72px}
+.logo{display:flex;align-items:center;gap:12px;font:800 1.05rem Manrope;white-space:nowrap}
+.logo img{height:46px;width:auto;object-fit:contain}
+footer .logo img{filter:brightness(1.9) saturate(.85)}
+.logo small{display:block;font:500 .7rem Inter;color:var(--ink2);letter-spacing:.04em}
+nav{display:flex;gap:4px;margin-left:auto}
+nav a{white-space:nowrap;padding:8px 13px;border-radius:8px;font-weight:500;font-size:.93rem;color:var(--ink2)}
+nav a:hover{color:var(--ink);background:var(--bg)}
+nav a[aria-current=page]{color:var(--blue);background:var(--blue-l)}
+.hd-r{display:flex;align-items:center;gap:10px}
+.lang{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.lang button{border:0;background:none;padding:6px 10px;font-weight:600;font-size:.8rem;color:var(--ink2)}
+.lang button[aria-pressed=true]{background:var(--ink);color:#fff}
+.cart-b{display:inline-flex;align-items:center;gap:9px;height:42px;padding:0 10px 0 13px;border-radius:11px;background:var(--blue-l);border:1px solid #cddcf1;color:var(--blue-d);font-weight:600;font-size:.88rem;transition:.18s}
+.cart-b:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+.cart-b b{min-width:24px;height:24px;border-radius:12px;background:var(--blue);color:#fff;font:700 .75rem/24px Inter;text-align:center;padding:0 7px;transition:.18s}
+.cart-b:hover b{background:#fff;color:var(--blue)}
+.cart-b:not(:has(b)){padding-right:13px}
+.cart-b.bump{animation:bump .45s}
+@keyframes bump{40%{transform:scale(1.1)}}
+.menu-b{display:none}
+/* hero */
+.hero{position:relative;color:#fff;padding:0;overflow:hidden;background:var(--navy)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72;filter:contrast(1.08) saturate(1.1)}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(95deg,rgba(11,22,38,.95) 25%,rgba(11,22,38,.45))}
+.hero .wrap{position:relative;z-index:1;padding-top:128px;padding-bottom:128px}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.2rem);max-width:17ch}
+.hero .btn{padding:16px 28px;font-size:1rem}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p{max-width:58ch;color:#c9d4e4;font-size:1.25rem;margin:26px 0 40px}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+.chips{display:flex;gap:10px 22px;flex-wrap:wrap;margin-top:44px;color:#b4c2d6;font-size:.9rem}
+.chips span:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--amber);margin-right:9px}
+.phead{background:var(--navy);color:#fff;padding:64px 0 56px;position:relative;overflow:hidden}
+.phead.img>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3}
+.phead .wrap{position:relative}
+.phead p{color:#b9c6da;margin-top:14px;max-width:60ch;font-size:1.05rem}
+.crumbs{font-size:.82rem;color:#8da0bb;margin-bottom:14px}
+.crumbs a:hover{color:#fff}
+/* stats */
+.stats{background:#fff;border-bottom:1px solid var(--line);padding:0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:34px 24px;border-right:1px solid var(--line)}.stat:last-child{border:0}
+.stat b{display:block;font:800 2.3rem Manrope;color:var(--blue);letter-spacing:-.03em}
+.stat span{color:var(--ink2);font-size:.9rem}
+/* grids */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.cols2{grid-template-columns:1fr 1fr}.cols-c{grid-template-columns:1fr 1.4fr}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow);transition:.2s}
+a.card:hover,.card.hov:hover{transform:translateY(-3px);border-color:#c3cee0}
+.ic{width:46px;height:46px;border-radius:12px;background:var(--blue-l);color:var(--blue);display:grid;place-items:center;margin-bottom:18px}
+.card p{color:var(--ink2);font-size:.94rem;margin-top:8px}
+.card ul{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:7px;font-size:.9rem;color:var(--ink2)}
+.card li:before{content:"✓";color:var(--blue);font-weight:700;margin-right:9px}
+.more{display:inline-block;margin-top:18px;font-weight:600;color:var(--blue);font-size:.9rem}
+.sechead{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+/* studio tiles for products */
+.tile{position:relative;aspect-ratio:4/3;border-radius:10px;background:#e9edf3;overflow:hidden;display:block}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.card:hover .tile img{transform:scale(1.05)}
+.catcard{padding:14px 14px 22px}.catcard h3{margin:16px 8px 0}.catcard span{display:block;margin:4px 8px 0;color:var(--ink2);font-size:.85rem}
+.dark{background:var(--navy);color:#fff}.dark .lead{color:#b9c6da}.dark .eyebrow{color:var(--amber)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:44px;counter-reset:s}
+.step{padding:0 26px 0 0;position:relative}
+.step:before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--amber);color:var(--amber);font:700 .95rem Manrope;margin-bottom:18px;background:var(--navy);position:relative;z-index:1}
+.step:after{content:"";position:absolute;top:20px;left:44px;right:6px;height:1px;background:rgba(255,255,255,.18)}.step:last-child:after{display:none}
+.step p{color:#aebdd3;font-size:.92rem;margin-top:6px}
+.cta{background:var(--blue);color:#fff;text-align:center;padding:72px 0}.cta p{color:#d6e2f4;margin:14px auto 28px;max-width:52ch}
+.cta .btn-p{background:#fff;color:var(--blue-d)}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{padding:7px 14px;border-radius:99px;border:1px solid var(--line);background:#fff;font-size:.85rem;font-weight:500;color:var(--ink2)}
+button.pill{transition:.15s}button.pill:hover{border-color:var(--blue);color:var(--blue)}
+button.pill[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+/* products */
+.shop{display:grid;grid-template-columns:250px 1fr;gap:32px;align-items:start}
+.side{position:sticky;top:96px}
+.side .cat{display:flex;justify-content:space-between;width:100%;padding:11px 14px;border:0;border-radius:10px;background:none;font-weight:500;color:var(--ink2);text-align:left}
+.side .cat:hover{background:#fff}.side .cat[aria-pressed=true]{background:var(--blue);color:#fff}
+.search{display:block;margin-bottom:14px}
+.field{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;transition:border-color .15s;position:relative}
+.field:focus-within{border-color:#8794a9}
+.field label{display:block;font-size:.75rem;font-weight:600;color:var(--ink2);margin-bottom:2px}
+.field input,.field textarea{width:100%;border:0;background:none;font:inherit;color:var(--ink);caret-color:var(--blue);outline:none;resize:vertical}
+.field .cnt{position:absolute;right:12px;bottom:8px;font-size:.72rem;color:var(--ink2)}
+.field .cnt.warn{color:#b4533a;font-weight:600}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.pcard{padding:14px;display:flex;flex-direction:column}
+.pcard .tile{cursor:pointer;border:0;padding:0;width:100%}
+.pcard small{color:var(--blue);font-weight:600;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-top:16px}
+.pcard h3{margin-top:4px}.pcard p{flex:1}
+.pcard .row{margin-top:16px;gap:8px}.pcard .row .btn{flex:1;padding:9px 10px}
+.empty{padding:60px 20px;text-align:center;color:var(--ink2);background:#fff;border:1px dashed var(--line);border-radius:var(--r)}
+/* cart */
+.cart{display:grid;grid-template-columns:1.5fr 1fr;gap:28px;align-items:start}
+.line{display:grid;grid-template-columns:96px 1fr auto;gap:18px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.line:last-child{border:0}.line .tile{aspect-ratio:1}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:9px;overflow:hidden;margin-top:8px}
+.qty button{width:34px;height:34px;border:0;background:#fff;font-size:1.1rem}.qty button:hover{background:var(--bg)}
+.qty span{min-width:36px;text-align:center;font-weight:600}
+.rm{background:none;border:0;color:var(--ink2);font-size:.85rem;text-decoration:underline}
+.sum{position:sticky;top:96px}
+.form{display:grid;gap:12px;margin-top:18px}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.consent{display:flex;gap:10px;font-size:.82rem;color:var(--ink2);align-items:flex-start}
+.consent input{margin-top:4px;accent-color:var(--blue);width:16px;height:16px;flex:none}
+.err{color:#b4533a;font-size:.85rem}
+.ok{background:#eaf6ee;border:1px solid #bfe0c9;color:#1f5f35;border-radius:12px;padding:18px 20px;font-weight:500}
+.info{display:grid;gap:18px}.info div b{display:block;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin-bottom:2px}
+/* blog, faq */
+.bcard{padding:0;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;text-align:left;width:100%}
+.bcard .top{padding:26px 26px 0;flex:1}
+.bcard .tags{display:flex;gap:6px;flex-wrap:wrap}.bcard .tags span{font-size:.68rem;font-weight:700;letter-spacing:.08em;color:var(--blue);text-transform:uppercase}
+.bcard h3{margin:14px 0 8px;font-size:1.2rem}.bcard .meta{padding:18px 26px 22px;color:var(--ink2);font-size:.82rem}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;transition:border-color .15s}
+details:hover,details[open]{border-color:#b7c3d6}
+summary{cursor:pointer;padding:18px 22px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}summary:after{content:"+";color:var(--blue);font-size:1.3rem;line-height:1}
+details[open] summary:after{content:"–"}
+details p{padding:0 22px 20px;color:var(--ink2)}
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(11,22,38,.6);display:none;place-items:center;z-index:90;padding:20px}
+.modal.on{display:grid}
+.mbox{background:#fff;border-radius:18px;max-width:620px;width:100%;max-height:88vh;overflow:auto;padding:32px;position:relative}
+.mbox .x{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:1.2rem}
+.mbox p{color:var(--ink2);margin-top:14px}
+/* servicos */
+.srow{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;padding-block:40px}
+.srow.rev .art{order:2}
+.art{position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;background:#e9eef5;border:1px solid var(--line);box-shadow:var(--shadow)}
+.art>img{width:100%;height:100%;object-fit:cover;filter:contrast(1.06) saturate(1.1)}
+.art:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(11,22,38,.28));pointer-events:none}
+.art svg{width:100%;height:100%;display:block}
+.art.tilebg{background:linear-gradient(180deg,#f8fafc 0,#eef2f7 56%,#d6dde8 56.3%,#e8ecf3 100%)}
+.art.tilebg:after{background:radial-gradient(ellipse at 50% 28%,rgba(255,255,255,.9),transparent 62%)}
+.art.tilebg>img{object-fit:contain;mix-blend-mode:multiply;width:78%;height:78%;margin:11%;position:relative;z-index:1}
+.badge{position:absolute;left:16px;top:16px;z-index:2;width:46px;height:46px;border-radius:13px;background:rgba(255,255,255,.94);color:var(--blue);display:grid;place-items:center;box-shadow:var(--shadow)}
+.flist{list-style:none;padding:0;margin:22px 0 28px;display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;color:var(--ink2);font-size:.93rem}
+.flist li:before{content:"✓";color:var(--blue);font-weight:700;margin-right:9px}
+.num{font:800 3.4rem Manrope;color:#dbe4f1;line-height:1;margin-bottom:6px;letter-spacing:-.04em}
+.svc .art{aspect-ratio:16/10;margin-bottom:20px;box-shadow:none;border-radius:12px}
+/* contacto */
+.split{display:grid;grid-template-columns:1fr 1.25fr;border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(14,26,43,.14);background:#fff}
+.pane{background:linear-gradient(160deg,#3b69ad,#274f8d);color:#fff;padding:44px}
+.pane h2,.fpane h2{font-size:1.7rem;margin-bottom:28px}.pane h2{color:#fff}
+.irow{display:flex;gap:16px;margin-bottom:22px}
+.ib{flex:none;width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.16);display:grid;place-items:center}
+.irow b{display:block;font-weight:600}.irow p,.irow a{color:#dbe7f7;font-size:.92rem;margin:0}
+.map{border-radius:14px;overflow:hidden;height:210px;margin-top:8px;position:relative;background:#cfdcf0}
+.map iframe{width:100%;height:100%;border:0}
+.map a{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--blue-d);padding:6px 12px;border-radius:8px;font-size:.78rem;font-weight:600;box-shadow:var(--shadow)}
+.fpane{padding:44px}.fpane .btn{width:100%}
+/* pesquisa */
+.sbar{display:flex;align-items:center;gap:12px;height:54px;padding:0 10px 0 16px;background:#fff;border:1px solid var(--line);border-radius:14px;color:var(--ink2);transition:border-color .15s;margin-bottom:12px}
+.sbar:focus-within{border-color:#8794a9}
+.sbar input{flex:1;min-width:0;border:0;background:none;font:inherit;color:var(--ink);caret-color:var(--blue);outline:none}
+.sbar input::-webkit-search-cancel-button{display:none}
+.sx{width:34px;height:34px;border-radius:50%;border:0;background:var(--bg);font-size:1.2rem;color:var(--ink2)}.sx:hover{background:var(--blue-l)}
+.rc{font-size:.85rem;color:var(--ink2);margin:0 0 14px 4px}
+/* blog */
+.bcard{padding:0;overflow:hidden;display:flex;flex-direction:column;text-align:left}
+.bimg{aspect-ratio:16/10;overflow:hidden;background:#e9eef5}.bimg img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.bcard:hover .bimg img{transform:scale(1.05)}
+.bcard .top{padding:22px 24px 0;flex:1}
+.btag{background:#eef2f7;color:var(--ink2);font:600 .66rem Inter;letter-spacing:.05em;text-transform:uppercase;padding:4px 9px;border-radius:6px}
+.btag.dk{background:rgba(255,255,255,.12);color:#cfdbee}
+.bcard .tags{display:flex;gap:6px;flex-wrap:wrap}
+.bcard h3{margin:14px 0 8px;font-size:1.15rem;line-height:1.3}.bcard p{margin:0 0 6px}
+.bcard .meta{display:flex;justify-content:space-between;padding:16px 24px 20px;color:var(--ink2);font-size:.8rem}.bcard .meta span{display:inline-flex;align-items:center;gap:6px}
+.ph1{font-size:clamp(1.8rem,4vw,2.9rem);max-width:24ch}
+.byline{display:flex;align-items:center;gap:10px;margin-top:22px;color:#b9c6da;font-size:.9rem;flex-wrap:wrap}.byline img{height:30px;width:auto;filter:brightness(1.9)}
+.prose{max-width:760px;margin:0 auto}
+.prose h2{font-size:1.5rem;margin:40px 0 14px}.prose p{color:#2b3a50;font-size:1.05rem;line-height:1.75;margin:0 0 16px}
+.prose ul,.prose ol{margin:0 0 20px;padding-left:22px;display:grid;gap:10px;color:#2b3a50;font-size:1.02rem;line-height:1.65}.prose li::marker{color:var(--blue);font-weight:700}
+.author{display:flex;gap:16px;align-items:center;margin-top:48px;padding:22px;border:1px solid var(--line);border-radius:var(--r);background:#fff}
+.author img{height:54px;width:auto}.author b{display:block}.author span{color:var(--ink2);font-size:.88rem}
+/* misc */
+footer{background:var(--navy);color:#aebdd3;padding:64px 0 28px;font-size:.92rem}
+footer .g{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+footer h4{color:#fff;font:700 .78rem Inter;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+footer a{display:block;padding:4px 0}footer a:hover{color:#fff}
+footer .bot{border-top:1px solid rgba(255,255,255,.1);margin-top:44px;padding-top:22px;font-size:.8rem}
+.wa{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#1faa59;color:#fff;display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.25)}
+.wa:hover{transform:scale(1.07)}
+.cookie{position:fixed;left:22px;bottom:22px;z-index:70;max-width:400px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 16px 48px rgba(14,26,43,.2)}
+.cookie p{font-size:.88rem;color:var(--ink2);margin:6px 0 16px}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 20px;border-radius:10px;font-size:.9rem;opacity:0;pointer-events:none;transition:.25s;z-index:95}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.note{font-size:.78rem;color:var(--ink2);margin-top:10px}
+.todo{background:#fff6dc;border-radius:4px;padding:0 5px;font-size:.85em}
+@media(max-width:960px){
+ .g2,.cart,.shop,footer .g,.cols-c{grid-template-columns:1fr}.g4{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr}.g3.cols2{grid-template-columns:1fr 1fr}
+ .side{position:static}.sum{position:static}.stats .wrap{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--line)}
+ .steps{grid-template-columns:1fr 1fr;gap:34px 0}.step:after{display:none}
+ section{padding:56px 0}.hero .wrap{padding-top:96px;padding-bottom:96px}
+ .srow,.split{grid-template-columns:1fr;gap:28px}.srow.rev .art{order:0}.pane,.fpane{padding:30px}
+}
+@media(max-width:1100px){
+ nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:12px 20px 20px;border-bottom:1px solid var(--line);margin:0}
+ nav.on{display:flex}.menu-b{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--line);border-radius:10px;background:#fff}
+ .hd .btn-p.hide-m{display:none}.hd-r{margin-left:auto}
+}
+@media(max-width:560px){.g4,.g3.cols2{grid-template-columns:1fr}.hd{gap:8px}.hd-r{gap:6px}.cart-b,.menu-b{height:38px}.menu-b{width:38px}.cart-b{padding:0 8px 0 10px}.cart-b .lbl{display:none}.flist{grid-template-columns:1fr}.logo{gap:8px;font-size:.95rem}.logo img{height:38px}.lang button{padding:5px 8px}.form .two{grid-template-columns:1fr}.line{grid-template-columns:72px 1fr}.line>:last-child{grid-column:2}.logo small{display:none}.cookie{left:12px;right:12px;max-width:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap hd">
+ <a class="logo" href="#/" aria-label="Baltazar Ferreira"><img src="logo.png" alt=""><span>Baltazar Ferreira<small id="tag"></small></span></a>
+ <nav id="nav" aria-label="principal"></nav>
+ <div class="hd-r">
+  <div class="lang" role="group" aria-label="Idioma / Language"><button data-l="pt" aria-pressed="true">PT</button><button data-l="en" aria-pressed="false">EN</button></div>
+  <a class="cart-b" href="#/carrinho" id="cartb"></a>
+  <a class="btn btn-p btn-sm hide-m" href="#/carrinho" id="quoteb"></a>
+  <button class="menu-b" id="menub" aria-label="Menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+ </div>
+</div></header>
+<main id="app"></main>
+<footer id="foot"></footer>
+<a class="wa" id="wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.4.6c-.2.2-.3.4-.1.7.7 1.2 1.6 2 2.7 2.6.3.2.5.1.7-.1l.8-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.4 0 .2 0 .8-.2 1.3z"/></svg></a>
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="mbox" id="mbox"></div></div>
+<div class="toast" id="toast" role="status"></div>
+<div id="ck"></div>
+
+<script src="blog-data.js"></script>
+<script>
+/* ===== dados (tudo o que se lê vem daqui; PT e EN lado a lado) ===== */
+const IMG='https://static.readdy.ai/image/c3c553ba836014245b050f490aa5a584/',RD='https://public.readdy.ai/ai/img_res/';
+const HERO=IMG+'17d84aee24090f20fc6beeafca13006b.jpeg',PHERO=IMG+'304d12c1839fc9fd3faac9fcb55182ff.png';
+const WA='https://wa.me/351934724284?text=';
+const CATS={emul:{pt:'Emulsões',en:'Emulsions'},tintas:{pt:'Tintas',en:'Inks'},prep:{pt:'Preparação e Limpeza',en:'Prep & Cleaning'},cons:{pt:'Consumíveis de Impressão',en:'Printing Supplies'}};
+const P=[
+['diazo','emul',RD+'6e743fd2-3356-4727-8fb1-9e7ef5fa0c5b.png',['Emulsões Diazo','Diazo Emulsions'],['Emulsões à base de diazo para tiragens longas de alta resolução.','Diazo-based emulsions for long, high-resolution print runs.']],
+['ceramica','emul',RD+'668fa335-8029-4ab7-a615-174c0243930a.png',['Emulsões para cerâmica','Ceramic Emulsions'],['Emulsões de alta qualidade e resistência para o segmento cerâmico.','High-quality, durable emulsions for the ceramics sector.']],
+['textil-emul','emul',RD+'3b499a3c-8e4d-48f0-ab3e-8eb80c0838b7.png',['Emulsões para têxtil','Textile Emulsions'],['Emulsões de alta qualidade e resistência para o segmento têxtil.','High-quality, durable emulsions for the textile sector.']],
+['tinta-textil','tintas',IMG+'ef5906195d17100ea8b01f658115bee7.png',['Tinta para Têxteis','Textile Ink'],['Tintas de alta qualidade para impressão em têxteis, em várias cores e formulações, com máxima aderência e durabilidade.','High-quality textile inks in many colours and formulations, with maximum adhesion and durability.']],
+['tintas','tintas',IMG+'4c26b6032205ebe2e6a2729065429926.png',['Tintas Serigráficas','Screen Printing Inks'],['Tintas para todos os materiais — papel, plástico, metal, vidro, madeira e têxtil — com excelente cobertura e resistência.','Inks for every material — paper, plastic, metal, glass, wood and textile — with excellent coverage and resistance.']],
+['tira-fantasmas','prep',RD+'e6df50d8-bcd1-4b38-88ae-7abbcc7c5e1e.png',['Tira Fantasmas','Haze Remover'],['Remove imagens fantasma e manchas de coloração nas telas.','Removes ghost images and colour stains from screens.']],
+['panos','prep',RD+'ed5cfc72-72f1-4421-abaa-0ca2c1bd5723.png',['Panos de Limpeza','Cleaning Cloths'],['Desperdício têxtil para limpeza.','Textile waste cloths for cleaning.']],
+['acetona','prep',RD+'b676d8ee-21be-42ae-9ee4-5f5089725e39.png',['Acetona Pura','Pure Acetone'],['Acetona de elevada pureza para limpeza e desengorduramento.','High-purity acetone for cleaning and degreasing.']],
+['diluente','prep',RD+'e2263082-1c1c-4594-88d4-9859f9a120e3.png',['Diluente','Thinner'],['Diluente para vários tipos de tintas e necessidades de limpeza.','Thinner for many ink types and cleaning needs.']],
+['desengordurante','prep',RD+'fc6daea6-5be1-4c10-bebc-1d48896c9290.png',['Desengordurante','Degreaser'],['Agente de limpeza e desengorduramento, de elevada eficácia, para todos os tipos de tela.','Highly effective cleaning and degreasing agent, suitable for all screen types.']],
+['abridor','prep',RD+'3e858e05-b748-4cfc-825b-bb8f04557fa3.png',['Abridor de Telas','Screen Opener'],['Recupera e abre telas entupidas, dissolvendo rapidamente resíduos de tinta secos.','Recovers and opens clogged screens by quickly dissolving dried ink residue.']],
+['telas','cons',IMG+'8a651a4b4e1ced65dd6f0358a3686fed.webp',['Telas Serigráficas','Screen Mesh'],['Ampla diversidade de telas de máxima qualidade e durabilidade, desde 21Y até 165T.','A wide range of top-quality, durable meshes from 21Y up to 165T.']],
+['borrachas','cons',RD+'0af4636f-14c4-4efd-b425-be4e18737514.png',['Borrachas','Squeegee Rubbers'],['Borrachas rijas e moles, de diferentes tamanhos, para todos os tipos de rodos e impressão.','Hard and soft rubbers in several sizes for every squeegee and print type.']],
+['rodos','cons',RD+'6a4297c4-9b92-4e85-8cb8-772f61f23b13.png',['Rodos com borracha','Squeegees with Rubber'],['Rodos com borracha incluída, de diferentes tamanhos e dureza.','Squeegees with rubber included, in several sizes and hardness.']],
+['colas','cons',RD+'4a05c9d1-cdac-484d-b3ba-b5d9921a0cdc.png',['Colas','Adhesives'],['Colas de alta adesão para serigrafia e aplicações têxteis industriais.','High-adhesion glues for screen printing and industrial textile uses.']]
+].map(([id,cat,_,n,d])=>({id,cat,img:'img/'+id+'.webp',n:{pt:n[0],en:n[1]},d:{pt:d[0],en:d[1]}}));
+const SV=[
+{id:'gravacao',ic:'M4 4h16v16H4zM8 8h8v8H8z',n:['Gravação de Quadros','Screen Exposure'],d:['Gravação de alta precisão com detalhes nítidos e resultados profissionais consistentes.','High-precision exposure with sharp detail and consistently professional results.'],f:[['Tecnologia de gravação de alta precisão','Reprodução nítida de detalhes','Resultados profissionais consistentes','Prazos de entrega rápidos'],['High-precision exposure technology','Sharp detail reproduction','Consistently professional results','Fast turnaround']]},
+{id:'fotolitos',ic:'M3 5h18v14H3zM3 9h18M9 5v14',n:['Criação de Fotolitos','Film Positives'],d:['Preparação profissional de arte-final com saída de alta resolução para impressão perfeita.','Professional artwork preparation with high-resolution output for perfect prints.'],f:[['Opacidade máxima da tinta nos fotolitos','Película transparente de alta qualidade','Máxima resolução','Vários tamanhos e larguras'],['Maximum ink opacity on films','High-quality clear film','Maximum resolution','Several sizes and widths']]},
+{id:'aluminio',ic:'M3 3h18v18H3zM7 7h10v10H7z',n:['Quadros de Alumínio','Aluminium Frames'],d:['Quadros personalizados e de tamanho standard com alta durabilidade.','Custom and standard-size frames with high durability.'],f:[['Tamanhos personalizados e standard','Alumínio de alta durabilidade','Engenharia de precisão','Várias configurações de tela'],['Custom and standard sizes','Highly durable aluminium','Precision engineering','Several mesh configurations']]},
+{id:'emulsionamento',ic:'M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z',n:['Emulsionamento Profissional','Professional Coating'],d:['Revestimento uniforme para resultados consistentes e qualidade superior.','Even coating for consistent results and superior quality.'],f:[['Aplicação uniforme de emulsão','Controlo consistente de espessura','Resultado de qualidade superior','Emulsões de grau profissional'],['Even emulsion application','Consistent thickness control','Superior-quality result','Professional-grade emulsions']]}
+];
+const FAQ=[
+['Básico','What is screen printing and how does it work?','O que é a serigrafia e como funciona?','A serigrafia é uma técnica de impressão onde a tinta é forçada através de uma malha fina esticada num quadro. As áreas que não devem ser impressas são bloqueadas com emulsão. Imprime-se em tecidos, plástico, metal, papel, vidro e cerâmica.','Screen printing forces ink through a fine mesh stretched on a frame. Areas that must not print are blocked with emulsion. You can print on fabric, plastic, metal, paper, glass and ceramics.'],
+['Serviços','How much does exposing a screen cost?','Quanto custa a gravação de um quadro serigráfico?','Depende do tamanho do quadro e da arte-final. Peça um orçamento com as medidas e respondemos em menos de 24 horas.','It depends on frame size and artwork. Request a quote with the dimensions and we reply within 24 hours.'],
+['Básico','Which materials can be printed?','Em que materiais é possível imprimir serigrafia?','Têxteis, plástico, metal, papel, vidro, madeira e cerâmica, com a tinta e a malha adequadas a cada um.','Textiles, plastic, metal, paper, glass, wood and ceramics, using the right ink and mesh for each.'],
+['Equipamentos','What are the essential tools for a studio?','Quais são os equipamentos essenciais para um atelier de serigrafia?','Quadros e telas, emulsão, mesa de gravação, rodos e borrachas, tintas e químicos de limpeza.','Frames and mesh, emulsion, an exposure unit, squeegees and rubbers, inks and cleaning chemicals.'],
+['Produtos','Diazo vs photopolymer emulsion?','Qual a diferença entre emulsão diazo e emulsão fotopolímero?','A diazo costuma ser a escolha para tiragens longas e alta resolução; a fotopolímero expõe mais depressa. Diga-nos o trabalho e aconselhamos.','Diazo is usually chosen for long, high-resolution runs; photopolymer exposes faster. Tell us the job and we will advise.'],
+['Negócio','Is screen printing profitable in Portugal?','A serigrafia é lucrativa em Portugal?','Depende do nicho, do volume e dos custos. Leia o nosso artigo no blog e fale connosco para o seu caso.','It depends on niche, volume and costs. Read our blog article and talk to us about your case.'],
+['Produtos','How do I choose the right mesh?','Como escolher a malha (tela) para serigrafia?','A contagem de fios define o detalhe e a quantidade de tinta: malhas abertas para têxtil e tintas espessas, fechadas para detalhe fino. Temos de 21Y a 165T.','Thread count sets detail and ink deposit: open meshes for textile and thick inks, fine meshes for detail. We stock 21Y to 165T.'],
+['Serviços','How long does screen exposure take?','Quanto tempo demora a gravação de um quadro serigráfico?','O prazo depende da quantidade e do tamanho. Indicamo-lo no orçamento.','Lead time depends on quantity and size. We state it in the quote.'],
+['Produtos','Do you sell to individuals?','Vendem produtos de serigrafia para particulares?','<span class="todo">A confirmar com o cliente.</span> Peça orçamento e dizemos o que é possível.','<span class="todo">To be confirmed with the client.</span> Ask for a quote and we will tell you what is possible.'],
+['Produtos','Do you ship across Portugal?','Fazem envio para todo Portugal?','Sim, entregamos em todo o país e na Europa.','Yes, we deliver across Portugal and Europe.'],
+['Equipamentos','65 Shore vs 70 Shore squeegee?','Qual é a diferença entre rodo 65 Shore e 70 Shore?','Quanto maior a dureza Shore, mais rígida a borracha: mais definição em linhas finas, menos deposição de tinta.','The higher the Shore hardness, the stiffer the rubber: more definition on fine lines, less ink deposit.'],
+['Serviços','How can I request a quote?','Como posso pedir um orçamento?','Adicione produtos ao carrinho e preencha o formulário, escreva-nos pela página de contacto ou use o WhatsApp.','Add products to the cart and fill in the form, write through the contact page or use WhatsApp.']
+].map(([c,qe,qp,ap,ae])=>({c,q:{pt:qp,en:qe},a:{pt:ap,en:ae}}));
+const FCATS=[['Todos','All'],['Básico','Basics'],['Serviços','Services'],['Equipamentos','Equipment'],['Produtos','Products'],['Negócio','Business']];
+const DISTRICTS='Lisboa Porto Coimbra Braga Setúbal Aveiro Leiria Faro Évora Guarda Viseu Bragança|Castelo Branco|Portalegre Santarém|Viana do Castelo|Vila Real'.replace(/\|/g,'§').split(/[ ](?=[A-ZÉ])|§/).filter(Boolean);
+const U={pt:{
+ tag:'SERIGRAFIA · LOURES',home:'Início',about:'Sobre Nós',services:'Serviços',products:'Produtos',blog:'Blog',contact:'Contacto',quote:'Pedir Orçamento',cart:'Carrinho',
+ h1a:'Soluções completas de ',h1b:'serigrafia',h1c:' para Portugal e Europa',heroP:'Serviços profissionais e produtos para clientes industriais, com apoio técnico de uma empresa familiar com mais de 25 anos.',
+ exploreS:'Explorar Serviços',seeCat:'Ver Catálogo de Produtos',c1:'Entrega em Portugal e na Europa',c2:'Resposta em menos de 24 horas',c3:'Empresa familiar desde há 25+ anos',
+ s1:'Anos de experiência',s2:'Clientes no setor serigráfico industrial e têxtil',s3:'Categorias de produtos',s4:'Tipos de serviços',
+ abE:'Sobre Baltazar Ferreira',abH:'Precisão, fiabilidade, parceria',abP1:'Com anos de experiência técnica, oferecemos soluções que combinam qualidade, precisão e fiabilidade para empresas, incluindo projetos para multinacionais do setor industrial.',abP2:'Somos uma empresa familiar especializada em serviços de apoio à serigrafia e fornecimento de produtos profissionais. O nosso compromisso é a parceria de longo prazo, com suporte técnico especializado.',
+ more:'Saber mais',svE:'Os nossos serviços',svH:'Soluções completas de serigrafia',svP:'Do quadro gravado ao produto final, tratamos de cada etapa com a mesma exigência.',
+ prE:'Os nossos produtos',prH:'Materiais de alta qualidade',prP:'Emulsões, tintas, telas, rodos e químicos para garantir os melhores resultados em cada impressão.',seeAll:'Ver todos os produtos',
+ hwE:'Como trabalhamos',hwH:'Do pedido à entrega',hw:[['Pedido','Diga-nos o que precisa, pelo carrinho, formulário ou WhatsApp.'],['Orçamento','Respondemos em menos de 24 horas.'],['Preparação','Preparamos produtos e serviços ao detalhe.'],['Entrega','Enviamos para Portugal e Europa.']],
+ ctaH:'Pronto para iniciar o seu projeto?',ctaP:'Fale com a nossa equipa. Respondemos em menos de 24 horas.',ctaB:'Contactar a nossa equipa',
+ footP:'Soluções profissionais de serigrafia para a indústria europeia.',company:'Empresa',pt:'Serigrafia em Portugal',faq:'FAQ',rights:'Todos os direitos reservados.',
+ catH:'Catálogo de consumíveis',catP:'Materiais de qualidade superior para profissionais de serigrafia.',cats:'Categorias',all:'Todos os produtos',search:'Pesquisar produtos',add:'Adicionar ao carrinho',added:'Adicionado ao carrinho',ask:'Pedir orçamento',details:'Ver detalhe',none:'Nenhum produto encontrado.',
+ cartH:'Carrinho de orçamento',cartP:'Reveja os produtos selecionados e peça o seu orçamento.',empty:'O seu carrinho está vazio',emptyP:'Adicione produtos para pedir um orçamento.',seeP:'Ver produtos',qty:'Quantidade',remove:'Remover',summary:'Resumo do pedido',total:'Total de produtos',keep:'Continuar a escolher',
+ fName:'Nome completo',fFirst:'Primeiro nome',fLast:'Último nome',fEmail:'Email',fPhone:'Telefone (opcional)',fCo:'Empresa (opcional)',fMsg:'Mensagem',fMsgO:'Mensagem adicional (opcional)',send:'Enviar pedido de orçamento',sendM:'Enviar mensagem',
+ consent:'Aceito que a Baltazar Ferreira use estes dados para responder ao meu pedido.',eReq:'Preencha os campos obrigatórios.',eMail:'Indique um email válido.',eCons:'É preciso aceitar para enviarmos o pedido.',
+ okQ:'Pedido registado. Respondemos em menos de 24 horas.',okC:'Mensagem registada. Respondemos em menos de 24 horas.',demo:'Versão de demonstração: nada é enviado.',
+ whereH:'Onde estamos',talk:'Fale connosco',phone:'Telefone',email:'Email',hours:'Horário',hoursV:'Seg – Sex: 9:00 – 18:00',writeH:'Entre em contacto',addr:'Morada',
+ svCta:'Pedir orçamento deste serviço',aboutH:'Sobre nós',vals:'Os nossos valores',vP:['Precisão','Cada detalhe conta. Entregamos resultados que cumprem os mais altos padrões técnicos.'],vF:['Fiabilidade','Qualidade consistente e serviço de confiança são a base de parcerias duradouras.'],vC:['Parceria','Relações duradouras, com apoio contínuo e conhecimento especializado.'],
+ blogH:'Blog de serigrafia',blogP:'Guias, dicas e notícias sobre serigrafia em Portugal.',allT:'Todas',rel:'Artigos relacionados',by:'Baltazar Ferreira',back:'Voltar ao blog',min:'min de leitura',close:'Fechar',faqH:'Perguntas frequentes',faqP:'Respostas claras sobre serigrafia, produtos e serviços.',faqCta:'Ainda tem dúvidas?',
+ ptH:'Serigrafia em Portugal',ptP:'Serviços profissionais e produtos premium para empresas em todo o país e na Europa.',ptI:'A serigrafia é uma técnica de impressão industrial que transfere tinta para vários materiais através de uma tela esticada num quadro. Em Portugal é muito usada nos setores têxtil, publicitário, cerâmico e de decoração.',ptD:'Servimos todo o país',ptDP:'De norte a sul, incluindo as ilhas.',
+ ckH:'Cookies',ckP:'Usamos cookies de medição só se aceitar. Pode recusar sem perder nada no site.',ckY:'Aceitar',ckN:'Recusar',
+ pageT:{home:'Baltazar Ferreira — Serigrafia em Portugal',about:'Sobre Nós | Baltazar Ferreira',services:'Serviços de Serigrafia | Baltazar Ferreira',products:'Produtos de Serigrafia | Baltazar Ferreira',blog:'Blog de Serigrafia | Baltazar Ferreira',contact:'Contacto e Orçamento | Baltazar Ferreira',cart:'Carrinho de orçamento | Baltazar Ferreira',faq:'FAQ Serigrafia | Baltazar Ferreira',pt:'Serigrafia em Portugal | Baltazar Ferreira'},waMsg:'Olá! Gostaria de obter mais informações sobre os vossos produtos e serviços de serigrafia.'},
+en:{
+ tag:'SCREEN PRINTING · LOURES',home:'Home',about:'About',services:'Services',products:'Products',blog:'Blog',contact:'Contact',quote:'Request a Quote',cart:'Cart',
+ h1a:'Complete ',h1b:'screen printing',h1c:' solutions for Portugal and Europe',heroP:'Professional services and products for industrial clients, backed by a family business with over 25 years of technical experience.',
+ exploreS:'Explore Services',seeCat:'View Product Catalogue',c1:'Delivery across Portugal and Europe',c2:'Reply within 24 hours',c3:'Family business for 25+ years',
+ s1:'Years of experience',s2:'Clients in industrial and textile screen printing',s3:'Product categories',s4:'Service types',
+ abE:'About Baltazar Ferreira',abH:'Precision, reliability, partnership',abP1:'With years of technical experience we offer solutions that combine quality, precision and reliability for companies, including projects for industrial multinationals.',abP2:'We are a family business specialising in screen printing support services and professional supplies. We are committed to long-term partnership with specialist technical support.',
+ more:'Learn more',svE:'Our services',svH:'Complete screen printing solutions',svP:'From the exposed frame to the final product, we handle every stage with the same standard.',
+ prE:'Our products',prH:'High-quality materials',prP:'Emulsions, inks, mesh, squeegees and chemicals to ensure the best result on every print.',seeAll:'See all products',
+ hwE:'How we work',hwH:'From request to delivery',hw:[['Request','Tell us what you need via the cart, the form or WhatsApp.'],['Quote','We reply within 24 hours.'],['Preparation','We prepare products and services in detail.'],['Delivery','We ship to Portugal and Europe.']],
+ ctaH:'Ready to start your project?',ctaP:'Talk to our team. We reply within 24 hours.',ctaB:'Contact our team',
+ footP:'Professional screen printing solutions for European industry.',company:'Company',pt:'Screen Printing in Portugal',faq:'FAQ',rights:'All rights reserved.',
+ catH:'Supplies catalogue',catP:'Premium materials for screen printing professionals.',cats:'Categories',all:'All products',search:'Search products',add:'Add to cart',added:'Added to cart',ask:'Request quote',details:'View details',none:'No products found.',
+ cartH:'Quote cart',cartP:'Review the selected products and request your quote.',empty:'Your cart is empty',emptyP:'Add products to request a quote.',seeP:'View products',qty:'Quantity',remove:'Remove',summary:'Order summary',total:'Total products',keep:'Keep browsing',
+ fName:'Full name',fFirst:'First name',fLast:'Last name',fEmail:'Email',fPhone:'Phone (optional)',fCo:'Company (optional)',fMsg:'Message',fMsgO:'Additional message (optional)',send:'Send quote request',sendM:'Send message',
+ consent:'I agree that Baltazar Ferreira uses this data to answer my request.',eReq:'Please fill in the required fields.',eMail:'Enter a valid email.',eCons:'Please accept so we can send your request.',
+ okQ:'Request logged. We reply within 24 hours.',okC:'Message logged. We reply within 24 hours.',demo:'Demo version: nothing is sent.',
+ whereH:'Where we are',talk:'Talk to us',phone:'Phone',email:'Email',hours:'Opening hours',hoursV:'Mon – Fri: 9:00 – 18:00',writeH:'Get in touch',addr:'Address',
+ svCta:'Request a quote for this service',aboutH:'About us',vals:'Our values',vP:['Precision','Every detail counts. We deliver results that meet the highest technical standards.'],vF:['Reliability','Consistent quality and dependable service are the basis of lasting partnerships.'],vC:['Partnership','Lasting relationships with ongoing support and specialist knowledge.'],
+ blogH:'Screen printing blog',blogP:'Guides, tips and news about screen printing in Portugal.',allT:'All',rel:'Related articles',by:'Baltazar Ferreira',back:'Back to blog',ptOnly:'Full article available in Portuguese.',min:'min read',close:'Close',faqH:'Frequently asked questions',faqP:'Clear answers about screen printing, products and services.',faqCta:'Still have questions?',
+ ptH:'Screen Printing in Portugal',ptP:'Professional services and premium products for companies across the country and Europe.',ptI:'Screen printing is an industrial printing technique that transfers ink onto many materials through a mesh stretched on a frame. In Portugal it is widely used in textile, advertising, ceramics and decoration.',ptD:'We serve the whole country',ptDP:'North to south, including the islands.',
+ ckH:'Cookies',ckP:'We use measurement cookies only if you accept. You can decline and lose nothing.',ckY:'Accept',ckN:'Decline',
+ pageT:{home:'Baltazar Ferreira — Screen Printing in Portugal',about:'About | Baltazar Ferreira',services:'Screen Printing Services | Baltazar Ferreira',products:'Screen Printing Products | Baltazar Ferreira',blog:'Screen Printing Blog | Baltazar Ferreira',contact:'Contact and Quote | Baltazar Ferreira',cart:'Quote cart | Baltazar Ferreira',faq:'Screen Printing FAQ | Baltazar Ferreira',pt:'Screen Printing in Portugal | Baltazar Ferreira'},waMsg:'Hello! I would like more information about your screen printing products and services.'}};
+
+/* ===== estado ===== */
+const st={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+let lang=st.get('lang','pt'),cart=st.get('carrinho',[]),cat='all',q='',tag='',fcat=0;
+const t=k=>U[lang][k],L=o=>o[lang],pick=a=>a[lang==='pt'?0:1];
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const svg=(d,s=22)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+const count=()=>cart.reduce((n,c)=>n+c.q,0);
+const tile=(p,tag='div')=>`<${tag} class="tile"><img src="${p.img}" alt="${esc(L(p.n))}" loading="lazy"></${tag}>`;
+function toast(m){const e=$('#toast');e.textContent=m;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),1800)}
+function addCart(id,n=1){const c=cart.find(x=>x.id===id);c?c.q+=n:cart.push({id,q:n});st.set('carrinho',cart);chrome();const cb=$('#cartb');cb.classList.remove('bump');void cb.offsetWidth;cb.classList.add('bump');toast(t('added'))}
+
+/* ===== estrutura fixa ===== */
+const ROUTES=['home','about','services','products','blog','contact'];
+const rt=()=>(location.hash.replace(/^#\//,'')||'').split('/')[0]||'';
+function chrome(){
+ document.documentElement.lang=lang;
+ $('#tag').textContent=t('tag');
+ $('#nav').innerHTML=ROUTES.map(r=>`<a href="#/${r==='home'?'':r}" ${((rt()||'home')===r)?'aria-current="page"':''}>${t(r)}</a>`).join('');
+ $('#cartb').innerHTML=svg('M3 4h2.2l2 10.2a1 1 0 0 0 1 .8h8.6a1 1 0 0 0 1-.8L19.5 8H6M9.5 20a.6.6 0 1 0 0 .01M17 20a.6.6 0 1 0 0 .01',20)+`<span class="lbl">${t('cart')}</span>`+(count()?`<b>${count()}</b>`:'');
+ $('#cartb').setAttribute('aria-label',t('cart')+' ('+count()+')');
+ $('#quoteb').textContent=t('quote');
+ document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.l===lang));
+ $('#wa').href=WA+encodeURIComponent(t('waMsg'));
+ const link=(h,x)=>`<a href="#/${h}">${x}</a>`;
+ $('#foot').innerHTML=`<div class="wrap"><div class="g"><div><div class="logo" style="color:#fff"><img src="logo.png" alt=""><span>Baltazar Ferreira</span></div><p style="margin-top:16px;max-width:34ch">${t('footP')}</p></div>
+ <div><h4>${t('services')}</h4>${SV.slice(0,3).map(s=>link('services',pick(s.n))).join('')}</div>
+ <div><h4>${t('products')}</h4>${CATS&&Object.values(CATS).map(c=>link('products',L(c))).join('')}</div>
+ <div><h4>${t('company')}</h4>${link('about',t('about'))}${link('serigrafia-em-portugal',t('pt'))}${link('blog',t('blog'))}${link('faq',t('faq'))}${link('contact',t('contact'))}</div></div>
+ <div class="bot">© ${new Date().getFullYear()} Baltazar Ferreira. ${t('rights')}</div></div>`;
+ if(!st.get('cookies',null)&&!$('#ck').innerHTML)ck();else if($('#ck').innerHTML)ck();
+}
+function ck(){ if(st.get('cookies',null)){$('#ck').innerHTML='';return}
+ $('#ck').innerHTML=`<div class="cookie" role="region" aria-label="${t('ckH')}"><h3>${t('ckH')}</h3><p>${t('ckP')}</p><div class="row"><button class="btn btn-o btn-sm" data-ck="no">${t('ckN')}</button><button class="btn btn-p btn-sm" data-ck="yes">${t('ckY')}</button></div></div>`}
+
+/* ===== páginas ===== */
+const head=(title,sub,crumb,img)=>`<div class="phead ${img?'img':''}">${img?`<img src="${img}" alt="">`:''}<div class="wrap"><div class="crumbs"><a href="#/">${t('home')}</a> / ${crumb||title}</div><h1>${title}</h1>${sub?`<p>${sub}</p>`:''}</div></div>`;
+const ctaBand=()=>`<div class="cta"><div class="wrap"><h2>${t('ctaH')}</h2><p>${t('ctaP')}</p><a class="btn btn-p" href="#/contact">${t('ctaB')}</a></div></div>`;
+const FRAME=`<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><linearGradient id="al" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3f5f8"/><stop offset=".45" stop-color="#b9c3d1"/><stop offset=".55" stop-color="#e8ecf2"/><stop offset="1" stop-color="#8f9bad"/></linearGradient><pattern id="mesh" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 0h6M0 0v6" stroke="#2f5d9e" stroke-opacity=".38" stroke-width=".6"/></pattern><radialGradient id="bgf" cx=".5" cy=".4" r=".8"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#d4dce8"/></radialGradient><filter id="sh"><feGaussianBlur stdDeviation="8"/></filter></defs><rect width="400" height="300" fill="url(#bgf)"/><ellipse cx="205" cy="268" rx="150" ry="13" fill="#0e1a2b" opacity=".2" filter="url(#sh)"/><g transform="rotate(-4 200 150)"><rect x="70" y="30" width="260" height="226" rx="10" fill="url(#al)"/><rect x="90" y="50" width="220" height="186" rx="4" fill="#dfe6f0"/><rect x="90" y="50" width="220" height="186" rx="4" fill="url(#mesh)"/><rect x="90" y="50" width="220" height="186" rx="4" fill="none" stroke="#8f9cb0" stroke-width="2"/><rect x="70.5" y="30.5" width="259" height="225" rx="10" fill="none" stroke="#fff" stroke-opacity=".8"/><path d="M130 200c20-42 42-72 82-82 20-5 42 6 62 32" fill="none" stroke="#2f5d9e" stroke-width="10" stroke-linecap="round" opacity=".55"/></g></svg>`,FILM=`<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="lt" cx=".5" cy=".45" r=".75"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#b9c9e2"/></radialGradient><pattern id="dots" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="2" fill="#0b1626"/></pattern><linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="fm"><rect x="115" y="70" width="175" height="150" fill="url(#fade)"/></mask></defs><rect width="400" height="300" fill="url(#lt)"/><g transform="rotate(3 200 150)"><rect x="58" y="34" width="284" height="234" fill="#fff" fill-opacity=".6" stroke="#93a6c6"/><path d="M58 52h18M67 43v18M324 52h18M333 43v18M58 250h18M67 241v18M324 250h18M333 241v18" stroke="#0b1626" stroke-width="1.4"/><circle cx="200" cy="150" r="62" fill="none" stroke="#0b1626" stroke-width="9"/><rect x="115" y="70" width="175" height="150" fill="url(#dots)" mask="url(#fm)"/><path d="M160 178l25-52 19 32 19-26 22 46z" fill="#0b1626"/></g></svg>`;
+const art=s=>{const b=`<span class="badge">${svg(s.ic,22)}</span>`;
+ if(s.id==='gravacao')return `<div class="art"><img src="${HERO}" alt="" style="object-position:6% 62%" loading="lazy">${b}</div>`;
+ if(s.id==='emulsionamento'){const p=P.find(x=>x.id==='diazo');return `<div class="art"><img src="${p.img}" alt="${esc(L(p.n))}" loading="lazy">${b}</div>`}
+ return `<div class="art">${s.id==='fotolitos'?FILM:FRAME}${b}</div>`};
+const svcCard=s=>`<div class="card hov svc">${art(s)}<h3>${pick(s.n)}</h3><p>${pick(s.d)}</p><a class="more" href="#/contact" data-svc="${s.id}">${t('svCta')} →</a></div>`;
+const bdate=d=>new Date(d).toLocaleDateString(lang==='pt'?'pt-PT':'en-GB',{day:'numeric',month:'long',year:'numeric'});
+const ico=d=>svg(d,14);
+const bcard=b=>`<a class="card bcard hov" href="#/blog/${b.slug}"><div class="bimg"><img src="${b.img}" alt="${esc(pick(b.n))}" loading="lazy"></div><div class="top"><div class="tags">${b.t.map(x=>`<span class="btag">${x}</span>`).join('')}</div><h3>${pick(b.n)}</h3><p>${pick(b.x)}</p></div><div class="meta"><span>${ico('M4 6h16v14H4zM4 10h16M8 3v4M16 3v4')} ${bdate(b.d)}</span><span>${ico('M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z')} ${b.m} ${t('min')}</span></div></a>`;
+const field=(id,label,o={})=>`<div class="field"><label for="${id}">${label}</label>${o.area?`<textarea id="${id}" name="${id}" rows="4" maxlength="${o.max}" ${o.req?'required':''}></textarea><span class="cnt" data-for="${id}">0/${o.max}</span>`:`<input id="${id}" name="${id}" type="${o.type||'text'}" maxlength="${o.max}" ${o.req?'required':''} autocomplete="${o.ac||'off'}">`}</div>`;
+const consent=()=>`<label class="consent"><input type="checkbox" name="consent"><span>${t('consent')}</span></label>`;
+
+const PAGES={
+home:()=>`<section class="hero"><img src="${HERO}" alt=""><div class="wrap"><h1>${t('h1a')}<em>${t('h1b')}</em>${t('h1c')}</h1><p>${t('heroP')}</p><div class="row"><a class="btn btn-p" href="#/services">${t('exploreS')}</a><a class="btn btn-w" href="#/products">${t('seeCat')}</a></div><div class="chips"><span>${t('c1')}</span><span>${t('c2')}</span><span>${t('c3')}</span></div></div></section>
+<section class="stats"><div class="wrap"><div class="stat"><b>25+</b><span>${t('s1')}</span></div><div class="stat"><b>500+</b><span>${t('s2')}</span></div><div class="stat"><b>${Object.keys(CATS).length*2}</b><span>${t('s3')}</span></div><div class="stat"><b>${SV.length}</b><span>${t('s4')}</span></div></div></section>
+<section><div class="wrap g2"><div><div class="eyebrow">${t('abE')}</div><h2>${t('abH')}</h2><p class="lead">${t('abP1')}</p><p class="lead">${t('abP2')}</p><a class="btn btn-o" style="margin-top:26px" href="#/about">${t('more')}</a></div>
+ <div class="tile" style="aspect-ratio:5/4;border-radius:18px;box-shadow:var(--shadow)"><img src="${PHERO}" alt="" style="width:100%;height:100%;object-fit:cover;mix-blend-mode:normal"></div></div></section>
+<section style="background:#fff;border-block:1px solid var(--line)"><div class="wrap"><div class="sechead"><div><div class="eyebrow">${t('svE')}</div><h2>${t('svH')}</h2><p class="lead">${t('svP')}</p></div><a class="btn btn-o" href="#/services">${t('more')}</a></div><div class="g4">${SV.map(svcCard).join('')}</div></div></section>
+<section><div class="wrap"><div class="sechead"><div><div class="eyebrow">${t('prE')}</div><h2>${t('prH')}</h2><p class="lead">${t('prP')}</p></div><a class="btn btn-p" href="#/products">${t('seeAll')}</a></div>
+ <div class="g4">${[['emul','diazo'],['tintas','tintas'],['cons','telas'],['cons','rodos']].map(([c,id],i)=>{const p=P.find(x=>x.id===id),name=i<2?L(CATS[c]):L(p.n);return `<a class="card catcard hov" href="#/products" data-cat="${i===3?'cons':c}">${tile(p)}<h3>${name}</h3><span>${P.filter(x=>x.cat===(i===3?'cons':c)).length} ${t('products').toLowerCase()}</span></a>`}).join('')}</div></div></section>
+<section class="dark"><div class="wrap"><div class="eyebrow">${t('hwE')}</div><h2>${t('hwH')}</h2><div class="steps">${t('hw').map(([a,b])=>`<div class="step"><h3>${a}</h3><p>${b}</p></div>`).join('')}</div></div></section>${ctaBand()}`,
+
+about:()=>`${head(t('aboutH'),t('abH'))}<section><div class="wrap g2"><div><div class="eyebrow">${t('abE')}</div><h2>${t('abH')}</h2><p class="lead">${t('abP1')}</p><p class="lead">${t('abP2')}</p></div><div class="g3 cols2"><div class="stat card"><b>25+</b><span>${t('s1')}</span></div><div class="stat card"><b>500+</b><span>${t('s2')}</span></div><div class="stat card"><b>8</b><span>${t('s3')}</span></div><div class="stat card"><b>${SV.length}</b><span>${t('s4')}</span></div></div></div></section>
+<section style="background:#fff;border-block:1px solid var(--line)"><div class="wrap"><h2 style="margin-bottom:32px">${t('vals')}</h2><div class="g3">${['vP','vF','vC'].map((k,i)=>`<div class="card"><div class="ic">${svg(['M12 3v18M3 12h18M6 6l12 12','M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z','M8 12a3 3 0 1 0 0-.01M16 12a3 3 0 1 0 0-.01M5 20c1-3 3-4 7-4s6 1 7 4'][i])}</div><h3>${t(k)[0]}</h3><p>${t(k)[1]}</p></div>`).join('')}</div></div></section>${ctaBand()}`,
+
+services:()=>`${head(t('svH'),t('svP'),t('services'))}<section style="padding-top:48px">${SV.map((s,i)=>`<div class="wrap srow ${i%2?'rev':''}">${art(s)}<div><div class="num">0${i+1}</div><h2>${pick(s.n)}</h2><p class="lead">${pick(s.d)}</p><ul class="flist">${s.f[lang==='pt'?0:1].map(f=>`<li>${f}</li>`).join('')}</ul><a class="btn btn-p" href="#/contact" data-svc="${s.id}">${t('svCta')}</a></div></div>`).join('')}</section>${ctaBand()}`,
+
+products:()=>{const f=filt();
+ return `${head(t('catH'),t('catP'),t('products'),PHERO)}<section style="padding-top:48px"><div class="wrap shop"><aside class="side"><div style="font:700 .75rem Inter;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin:0 14px 8px">${t('cats')}</div>
+ <button class="cat" data-c="all" aria-pressed="${cat==='all'}"><span>${t('all')}</span><span>${P.length}</span></button>${Object.entries(CATS).map(([k,v])=>`<button class="cat" data-c="${k}" aria-pressed="${cat===k}"><span>${L(v)}</span><span>${P.filter(p=>p.cat===k).length}</span></button>`).join('')}</aside>
+ <div><div class="sbar">${svg('M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zM20 20l-4-4',20)}<input id="q" type="search" maxlength="100" placeholder="${t('search')}…" aria-label="${t('search')}" value="${esc(q)}" autocomplete="off"><button class="sx" type="button" data-qclear aria-label="${t('close')}" ${q?'':'hidden'}>×</button></div><div id="plist">${plist(f)}</div></div></div></section>`},
+cart:()=>{const rows=cart.map(c=>({...c,p:P.find(p=>p.id===c.id)})).filter(r=>r.p);
+ if(!rows.length)return `${head(t('cartH'),t('cartP'),t('cart'))}<section><div class="wrap"><div class="empty"><h3>${t('empty')}</h3><p style="margin:8px 0 22px">${t('emptyP')}</p><a class="btn btn-p" href="#/products">${t('seeP')}</a></div></div></section>`;
+ return `${head(t('cartH'),t('cartP'),t('cart'))}<section><div class="wrap cart"><div class="card">${rows.map(r=>`<div class="line">${tile(r.p)}<div><h3>${L(r.p.n)}</h3><p style="margin:4px 0 0">${L(r.p.d)}</p><div class="qty" role="group" aria-label="${t('qty')}"><button data-q="${r.id}" data-d="-1" aria-label="−">−</button><span>${r.q}</span><button data-q="${r.id}" data-d="1" aria-label="+">+</button></div></div><button class="rm" data-rm="${r.id}">${t('remove')}</button></div>`).join('')}<a class="more" href="#/products">← ${t('keep')}</a></div>
+ <aside class="card sum"><h3>${t('summary')}</h3><p style="margin:8px 0 0"><b>${t('total')}: ${count()}</b></p>
+ <form class="form" id="qf" novalidate>${field('name',t('fName'),{max:80,req:1,ac:'name'})}${field('email',t('fEmail'),{max:254,req:1,type:'email',ac:'email'})}<div class="two">${field('phone',t('fPhone'),{max:20,type:'tel',ac:'tel'})}${field('company',t('fCo'),{max:120,ac:'organization'})}</div>${field('message',t('fMsgO'),{max:500,area:1})}${consent()}<div class="err" id="err" role="alert"></div><button class="btn btn-p" type="submit">${t('send')}</button><p class="note">${t('demo')}</p></form></aside></div></section>`},
+contact:()=>`${head(t('talk'),t('ctaP'),t('contact'))}<section><div class="wrap"><div class="split"><div class="pane"><h2>${t('whereH')}</h2>
+ <div class="irow"><span class="ib">${svg('M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11zM12 12a2 2 0 1 0 0-.01')}</span><div><b>${t('addr')}</b><p>Praceta Manuel da Fonseca, Loja Dta.<br>Fanqueiro<br>2670-367 LOURES</p></div></div>
+ <div class="irow"><span class="ib">${svg('M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2')}</span><div><b>${t('phone')}</b><a href="tel:+351934724284">+351 934 724 284</a></div></div>
+ <div class="irow"><span class="ib">${svg('M3 6h18v12H3zM3 7l9 7 9-7')}</span><div><b>${t('email')}</b><a href="mailto:bferreiralda@gmail.com">bferreiralda@gmail.com</a></div></div>
+ <div class="irow"><span class="ib">${svg('M12 7v5l3 2M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z')}</span><div><b>${t('hours')}</b><p>${t('hoursV')}</p></div></div>
+ <div class="map"><iframe title="Mapa" loading="lazy" referrerpolicy="no-referrer" src="https://www.openstreetmap.org/export/embed.html?bbox=-9.182%2C38.824%2C-9.154%2C38.844&amp;layer=mapnik&amp;marker=38.834%2C-9.168"></iframe><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Praceta+Manuel+da+Fonseca+Fanqueiro+2670-367+Loures">Maps ↗</a></div></div>
+ <div class="fpane"><h2>${t('writeH')}</h2><form class="form" id="cf" novalidate><div class="two">${field('first',t('fFirst'),{max:80,ac:'given-name'})}${field('last',t('fLast'),{max:80,ac:'family-name'})}</div>${field('email',t('fEmail'),{max:254,req:1,type:'email',ac:'email'})}${field('message',t('fMsg'),{max:500,area:1,req:1})}${consent()}<div class="err" id="err" role="alert"></div><button class="btn btn-p" type="submit">${t('sendM').toUpperCase()}</button><p class="note">${t('demo')}</p></form></div></div></div></section>`,
+blog:()=>{const tags=[...new Set(BLOG.flatMap(b=>b.t))];const f=BLOG.filter(b=>!tag||b.t.includes(tag));
+ return `${head(t('blogH'),t('blogP'),t('blog'),HERO)}<section><div class="wrap"><div class="pills" style="margin-bottom:32px"><button class="pill" data-tag="" aria-pressed="${!tag}">${t('allT')}</button>${tags.map(g=>`<button class="pill" data-tag="${g}" aria-pressed="${tag===g}">${g}</button>`).join('')}</div>
+ <div class="g3">${f.map(bcard).join('')}</div></div></section>${ctaBand()}`},
+faq:()=>`${head(t('faqH'),t('faqP'),t('faq'))}<section><div class="wrap" style="max-width:820px"><div class="pills" style="margin-bottom:28px">${FCATS.map((c,i)=>`<button class="pill" data-fc="${i}" aria-pressed="${fcat===i}">${pick(c)}</button>`).join('')}</div>
+ ${FAQ.filter(f=>!fcat||f.c===FCATS[fcat][0]).map(f=>`<details><summary>${L(f.q)}</summary><p>${L(f.a)}</p></details>`).join('')}
+ <div class="card" style="margin-top:36px;text-align:center"><h3>${t('faqCta')}</h3><p>${t('ctaP')}</p><a class="btn btn-p" style="margin-top:18px" href="#/contact">${t('ctaB')}</a></div></div></section>`,
+'serigrafia-em-portugal':()=>`${head(t('ptH'),t('ptP'),t('pt'))}<section><div class="wrap g2"><div><div class="eyebrow">${t('svE')}</div><h2>${t('ptH')}</h2><p class="lead">${t('ptI')}</p></div><div class="tile" style="aspect-ratio:4/3;border-radius:18px"><img src="${HERO}" alt="" style="width:100%;height:100%;object-fit:cover;mix-blend-mode:normal"></div></div></section>
+<section style="background:#fff;border-block:1px solid var(--line)"><div class="wrap"><h2 style="margin-bottom:28px">${t('svH')}</h2><div class="g3">${SV.map(s=>`<div class="card"><div class="ic">${svg(s.ic)}</div><h3>${pick(s.n)}</h3><p>${pick(s.d)}</p></div>`).join('')}</div></div></section>
+<section><div class="wrap"><h2>${t('ptD')}</h2><p class="lead">${t('ptDP')}</p><div class="pills" style="margin-top:26px">${DISTRICTS.map(d=>`<span class="pill">${d}</span>`).join('')}</div></div></section>${ctaBand()}`
+};
+const norm=x=>x.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
+const filt=()=>{const w=norm(q).split(/\s+/).filter(Boolean).map(x=>x.slice(0,5));return P.filter(p=>(cat==='all'||p.cat===cat)&&w.every(x=>norm(L(p.n)+' '+L(p.d)+' '+L(CATS[p.cat])).includes(x)))};
+function postPage(b){let ol=0,ul=0,h='';const close=()=>{if(ol){h+='</ol>';ol=0}if(ul){h+='</ul>';ul=0}};
+ b.b.forEach(x=>{const k=x[0],v=x.slice(2);
+  if(k==='o'){if(!ol){close();h+='<ol>';ol=1}h+=`<li>${li(v)}</li>`}else if(k==='l'){if(!ul){close();h+='<ul>';ul=1}h+=`<li>${li(v)}</li>`}else{close();h+=k==='h'?`<h2>${v}</h2>`:`<p>${v}</p>`}});close();
+ const rel=BLOG.filter(x=>x!==b).slice(0,3);
+ return `<div class="phead"><div class="wrap"><div class="crumbs"><a href="#/">${t('home')}</a> / <a href="#/blog">${t('blog')}</a> / ${pick(b.n)}</div><div class="tags" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">${b.t.map(x=>`<span class="btag dk">${x}</span>`).join('')}</div><h1 class="ph1">${pick(b.n)}</h1><div class="byline"><img src="logo.png" alt=""><span>${t('by')}</span><span>·</span><span>${bdate(b.d)}</span><span>·</span><span>${b.m} ${t('min')}</span></div></div></div>
+ <section style="padding-top:44px"><div class="wrap"><div class="prose"><div class="art" style="aspect-ratio:16/8;margin-bottom:40px"><img src="${b.img}" alt="${esc(pick(b.n))}"></div>${lang==='en'?`<p class="note" style="margin:-20px 0 24px">${t('ptOnly')}</p>`:''}${h}
+ <div class="author"><img src="logo.png" alt=""><div><b>Baltazar Ferreira</b><span>Especialista em Serigrafia | Baltazar Ferreira</span></div></div></div></div></section>
+ <section style="background:#fff;border-block:1px solid var(--line)"><div class="wrap"><h2 style="margin-bottom:28px">${t('rel')}</h2><div class="g3">${rel.map(bcard).join('')}</div></div></section>${ctaBand()}`}
+const li=v=>{const i=v.indexOf(' — ');return i>0?`<b>${v.slice(0,i)}</b> — ${v.slice(i+3)}`:v};
+function plist(f){return f.length?`${q?`<p class="rc">${f.length} ${lang==='pt'?'resultados':'results'}</p>`:''}<div class="pgrid">${f.map(p=>`<article class="card pcard"><button class="tile" data-open="${p.id}" aria-label="${t('details')}: ${esc(L(p.n))}"><img src="${p.img}" alt="" loading="lazy"></button><small>${L(CATS[p.cat])}</small><h3>${L(p.n)}</h3><p>${L(p.d)}</p><div class="row"><button class="btn btn-o btn-sm" data-add="${p.id}">${t('add')}</button><button class="btn btn-p btn-sm" data-ask="${p.id}">${t('ask')}</button></div></article>`).join('')}</div>`:`<div class="empty">${t('none')}</div>`}
+
+/* ===== render e eventos ===== */
+function render(){const r=({carrinho:'cart'})[rt()]||rt()||'home';const k=PAGES[r]?r:'home';const sg=location.hash.split('/'),bp=k==='blog'&&sg[2]&&BLOG.find(x=>x.slug===sg[2]);$('#app').innerHTML=bp?postPage(bp):PAGES[k]();document.title=bp?pick(bp.n)+' | Baltazar Ferreira':(t('pageT')[k==='serigrafia-em-portugal'?'pt':k]||t('pageT').home);chrome();$('#nav').classList.remove('on');$('#menub').setAttribute('aria-expanded','false');window.scrollTo(0,0)}
+function modal(html){$('#mbox').innerHTML=`<button class="x" data-x aria-label="${t('close')}">×</button>${html}`;$('#modal').classList.add('on');$('#mbox .x').focus()}
+function submit(form,kind){const d=Object.fromEntries(new FormData(form)),e=$('#err');
+ if(!d.email||(kind==='c'&&!d.message))return e.textContent=t('eReq')||'';
+ if(kind==='q'&&!d.name)return e.textContent=t('eReq');
+ if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email))return e.textContent=t('eMail');
+ if(!d.consent)return e.textContent=t('eCons');
+ form.outerHTML=`<div class="ok" role="status">${t(kind==='q'?'okQ':'okC')}<br><small>${t('demo')}</small></div>`;
+ if(kind==='q'){cart=[];st.set('carrinho',cart);chrome();$('.cart>.card').innerHTML=`<h3>${t('empty')}</h3><a class="more" href="#/products">${t('seeP')} →</a>`}}
+document.addEventListener('click',e=>{const g=s=>e.target.closest(s);let b;
+ if(b=g('[data-l]')){lang=b.dataset.l;st.set('lang',lang);render()}
+ else if(b=g('[data-add]'))addCart(b.dataset.add);
+ else if(b=g('[data-ask]')){addCart(b.dataset.ask);location.hash='#/carrinho'}
+ else if(b=g('[data-open]')){const p=P.find(x=>x.id===b.dataset.open);modal(`${tile(p)}<div class="eyebrow" style="margin-top:22px">${L(CATS[p.cat])}</div><h2>${L(p.n)}</h2><p>${L(p.d)}</p><div class="row" style="margin-top:22px"><button class="btn btn-p" data-add="${p.id}">${t('add')}</button><a class="btn btn-o" href="#/carrinho" data-x>${t('ask')}</a></div>`)}
+ else if(g('[data-qclear]')){q='';render()}
+ else if(b=g('[data-c]')){cat=b.dataset.c;render()}
+ else if(b=g('[data-cat]')){cat=b.dataset.cat;q=''}
+ else if(b=g('[data-q]')){const c=cart.find(x=>x.id===b.dataset.q);c.q=Math.max(1,Math.min(999,c.q+ +b.dataset.d));st.set('carrinho',cart);render()}
+ else if(b=g('[data-rm]')){cart=cart.filter(x=>x.id!==b.dataset.rm);st.set('carrinho',cart);render()}
+ else if(b=g('[data-tag]')){tag=b.dataset.tag;render()}
+ else if(b=g('[data-fc]')){fcat=+b.dataset.fc;render()}
+ else if(b=g('[data-svc]')){sessionStorage.setItem('svc',b.dataset.svc)}
+ else if(b=g('[data-ck]')){st.set('cookies',b.dataset.ck);ck() /* ligar o Google Analytics aqui só quando for 'yes' */}
+ if(g('[data-x]')||e.target===$('#modal'))$('#modal').classList.remove('on')});
+document.addEventListener('input',e=>{const i=e.target;if(i.id==='q'){q=i.value;$('#plist').innerHTML=plist(filt());document.querySelector('[data-qclear]').hidden=!q}
+ const c=i.id&&document.querySelector(`.cnt[data-for="${i.id}"]`);if(c){c.textContent=i.value.length+'/'+i.maxLength;c.classList.toggle('warn',i.value.length>=i.maxLength*.9)}});
+document.addEventListener('submit',e=>{e.preventDefault();submit(e.target,e.target.id==='qf'?'q':'c')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('#modal').classList.remove('on')});
+$('#menub').onclick=()=>{const o=$('#nav').classList.toggle('on');$('#menub').setAttribute('aria-expanded',o)};
+addEventListener('hashchange',()=>{render();const s=sessionStorage.getItem('svc');if(s&&rt()==='contact'){const m=$('#message');m&&(m.value=(lang==='pt'?'Gostaria de um orçamento para: ':'I would like a quote for: ')+pick(SV.find(x=>x.id===s).n)+'. ');sessionStorage.removeItem('svc')}});
+render();
+</script>
+</body>
+</html>
