@@ -1,0 +1,136 @@
+---
+import Base from "../../layouts/Base.astro";
+import CartBtn from "../../components/CartBtn.astro";
+import { produtos, rotulo, type Bloco } from "../../data/produtos";
+
+export function getStaticPaths() {
+  return produtos.map((p) => ({ params: { slug: p.slug }, props: { p } }));
+}
+const { p } = Astro.props;
+const wa = "https://wa.me/351934724284?text=Ol%C3%A1!%20Gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20vossos%20produtos%20e%20servi%C3%A7os%20de%20serigrafia.";
+const rel: Record<string, string> = { "Tinta para Têxteis": "tinta-textil", "Diluente Universal": "universal-thinner", "Telas Serigráficas": "telas-serigraficas", "Emulsão Fotopolimérica": "photopolymer-emulsion" };
+
+const mais = produtos.filter((m) => m.categoria === p.categoria && m.slug !== p.slug).slice(0, 3);
+const corpo: Bloco[] = p.blocos.filter((b, i) => !(i === 0 && b[0] === "h1"));
+const k = corpo.findIndex((b) => b[0] === "h2");
+const pre = k < 0 ? corpo : corpo.slice(0, k);
+const resto = k < 0 ? [] : corpo.slice(k);
+const tags = pre.filter((b) => b[0] === "p" && b[1].length < 40).map((b) => b[1]);
+const ps = pre.filter((b) => b[0] === "p" && b[1].length >= 40).map((b) => b[1]);
+const lis = pre.filter((b) => b[0] === "li").map((b) => b[1]);
+const lede = ps[0];
+const extra = ps.slice(1);
+type Sec = { h2: string; ps: string[]; cards: { h: string; t: string }[]; par: [string, string][] };
+const secs: Sec[] = [];
+for (let i = 0; i < resto.length; i++) {
+  const [t, v] = resto[i];
+  if (t === "h2") secs.push({ h2: v, ps: [], cards: [], par: [] });
+  else {
+    const s = secs[secs.length - 1];
+    if (t === "p") s.ps.push(v);
+    else if (t === "h3") { s.cards.push({ h: v, t: resto[i + 1]?.[0] === "p" ? resto[i + 1][1] : "" }); i++; }
+  }
+}
+const last = secs.length && /^(Procura|Precisa)/.test(secs[secs.length - 1].h2) ? secs.pop() : null;
+for (const s of secs) if (/Relacionados/.test(s.h2)) { const a = s.ps; s.ps = []; for (let i = 0; i + 1 < a.length; i += 2) s.par.push([a[i], a[i + 1]]); }
+---
+<Base title={p.titulo} description={p.meta} canonical={`https://baltazarferreira.com/products/${p.slug}`}>
+  <link slot="head" rel="stylesheet" href="/assets/g3.css" />
+  <section class="hero pg-hero with-fig">
+    <div class="wrap">
+      <div>
+        <p class="crumb"><a href="/products/">Produtos</a> / {rotulo[p.categoria] ?? p.categoria}</p>
+        {tags.map((t) => <span class="tagline">{t}</span>)}
+        <h1>{p.h1}</h1>
+        {lede && <p class="lede">{lede}</p>}
+        <div class="hero-cta">
+          <CartBtn p={p} cls="btn btn-accent" />
+          <a class="btn btn-ghost" href="/contact/">Pedir Orçamento</a>
+        </div>
+      </div>
+      <figure class="pfig rv"><img src={p.img} alt={p.alt} width="640" height="640" /></figure>
+    </div>
+  </section>
+
+  {(extra.length > 0 || lis.length > 0) && (
+    <section class="sec">
+      <div class="wrap">
+        {extra.length > 0 && <div class="txt rv">{extra.map((t) => <p>{t}</p>)}</div>}
+        {lis.length > 0 && (
+          <ul class="checks">
+            {lis.map((t, i) => <li class="rv" style={`--i:${i % 4}`}><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span><span>{t}</span></li>)}
+          </ul>
+        )}
+      </div>
+    </section>
+  )}
+
+  {secs.map((s, i) => (
+    <section class={`sec${i % 2 === 0 ? " sec-tint" : ""}`}>
+      <div class="wrap">
+        {secs.length >= 3 && i % 3 === 1 ? (
+          <div class="split rv">
+            <div class="sec-head"><h2>{s.h2}</h2>{s.ps.map((t) => <p>{t}</p>)}</div>
+            <figure class="pfig"><img src={p.img} alt={p.alt} width="640" height="640" loading="lazy" /></figure>
+          </div>
+        ) : (
+          <div class="sec-head rv"><h2>{s.h2}</h2>{s.ps.map((t) => <p>{t}</p>)}</div>
+        )}
+        {s.cards.length > 0 && (
+          <div class="cards">
+            {s.cards.map((c, j) => (
+              <article class="card type-card rv" style={`--i:${j}`}>
+                <h3><span class="n">0{j + 1}</span>{c.h}</h3>
+                <p>{c.t}</p>
+              </article>
+            ))}
+          </div>
+        )}
+        {s.par.length > 0 && (
+          <div class="cards">
+            {s.par.map(([n, d], j) => (
+              <article class="card rv" style={`--i:${j}`}>
+                {rel[n] ? <a class="rel" href={`/products/${rel[n]}/`}><h3>{n}</h3></a> : <h3>{n}</h3>}
+                <p>{d}</p>
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  ))}
+
+  <section class="sec sec-ink">
+    <div class="wrap">
+      <div class="sec-head rv"><span class="eyebrow">{rotulo[p.categoria] ?? p.categoria}</span><h2>Mais produtos desta categoria</h2></div>
+      <ul class="rel-list">
+        {mais.map((m, j) => (
+          <li class="rv" style={`--i:${j}`}>
+            <a href={`/products/${m.slug}/`}><strong>{m.nome}</strong><span>{m.desc}</span></a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec cta">
+    <div class="wrap rv">
+      <h2>{last ? last.h2 : `Precisa de ${p.nome}?`}</h2>
+      {last && last.ps.map((t) => <p style="margin-inline:auto">{t}</p>)}
+      <div class="hero-cta">
+        <a class="btn btn-ink" href="/contact/">Pedir Orçamento</a>
+        <a class="btn btn-ghost" href={wa}>Fale connosco</a>
+      </div>
+      <p class="back" style="margin-inline:auto"><a href="/products/">← Ver todos os produtos</a></p>
+    </div>
+  </section>
+  <script>
+    document.addEventListener("click", (e) => {
+      const b = (e.target as HTMLElement).closest<HTMLElement>("[data-add-cart]");
+      if (!b) return;
+      b.classList.add("added");
+      const s = b.querySelector("span"); if (s) s.textContent = "Adicionado";
+      setTimeout(() => { b.classList.remove("added"); if (s) s.textContent = "Adicionar ao Carrinho"; }, 1600);
+    });
+  </script>
+</Base>

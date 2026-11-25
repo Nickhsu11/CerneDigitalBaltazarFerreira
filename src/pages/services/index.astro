@@ -1,0 +1,63 @@
+---
+import Base from "../../layouts/Base.astro";
+const wa = "https://wa.me/351934724284?text=Ol%C3%A1!%20Gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20vossos%20produtos%20e%20servi%C3%A7os%20de%20serigrafia.";
+const img = (h: string) => `/assets/img/${h}.webp`;
+const emu = img("f20b694487fbdc0b9294ca5652470ed5"), rod = img("83a92eff4be4a8986e351c0e19f4d076"),
+  tel = img("f4cd813b525d318ac20955b9ea0f3b40"), tin = img("723694ad9521a024a376a5e50bbb878a");
+const servicos = [
+  { t: "Gravação de Quadros", d: "Gravação de alta precisão com detalhes nítidos e resultados profissionais consistentes.", f: ["Tecnologia de gravação de alta precisão", "Reprodução nítida de detalhes", "Resultados profissionais consistentes", "Prazos de entrega rápidos"], h: "https://baltazarferreira.com/services/gravacao-de-quadros", im: tel, alt: "Telas serigráficas" },
+  { t: "Criação de Fotolitos", d: "Preparação profissional de arte-final com saída de alta resolução para impressão perfeita.", f: ["Opacidade Máxima da tinta nos fotolitos", "Película Transparente de alta qualidade", "Máxima Resolução", "Vários tamanhos e larguras"], h: "https://baltazarferreira.com/services/criacao-de-fotolitos", im: tin, alt: "Tintas serigráficas" },
+  { t: "Quadros de Alumínio", d: "Quadros personalizados e tamanhos standard com alta durabilidade.", f: ["Tamanhos personalizados e standard", "Alumínio de alta durabilidade", "Engenharia de precisão", "Várias configurações de tela"], h: "https://baltazarferreira.com/services/quadros-de-aluminio", im: rod, alt: "Rodos profissionais" },
+  { t: "Emulsionamento Profissional", d: "Revestimento uniforme para resultados consistentes e qualidade superior.", f: ["Aplicação uniforme de emulsão", "Controlo consistente de espessura", "Resultado de qualidade superior", "Emulsões de grau profissional"], h: "https://baltazarferreira.com/services/emulsionamento-profissional", im: emu, alt: "Emulsões profissionais" },
+];
+---
+<Base
+  title="Serviços de Serigrafia Profissional | Baltazar Ferreira"
+  description="Serviços profissionais de serigrafia em Portugal: gravação de quadros, criação de fotolitos, quadros de alumínio e emulsionamento profissional para clientes nacionais e europeus."
+  canonical="https://baltazarferreira.com/services"
+>
+  <link slot="head" rel="stylesheet" href="/assets/g3.css" />
+  <section class="hero pg-hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Serviços</span>
+        <h1>Soluções Completas de Serigrafia</h1>
+        <p class="lede">Soluções de Serigrafia para clientes em Portugal e Europa.</p>
+      </div>
+    </div>
+  </section>
+
+  {servicos.map((s, i) => (
+    <section class={`sec${i % 2 === 0 ? "" : " sec-tint"}`}>
+      <div class={`wrap svc${i % 2 ? " flip" : ""}`}>
+        <div class="rv">
+          <span class="big" aria-hidden="true">0{i + 1}</span>
+          <h2>{s.t}</h2>
+          <p>{s.d}</p>
+          <h3>Características Principais</h3>
+          {i % 2 === 0 ? (
+            <ul class="feat">
+              {s.f.map((x) => <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg></span>{x}</li>)}
+            </ul>
+          ) : (
+            <div class="cards minis">
+              {s.f.map((x, j) => <article class="card"><span class="n">0{j + 1}</span><p>{x}</p></article>)}
+            </div>
+          )}
+          <a class="btn btn-ink" href={s.h}>Saber mais<span class="sr" style="position:absolute;left:-999px">: {s.t}</span></a>
+        </div>
+        <figure class="rv" style="--i:1"><img src={s.im} alt={s.alt} loading="lazy" width="672" height="512" /></figure>
+      </div>
+    </section>
+  ))}
+
+  <section class="sec cta">
+    <div class="wrap rv">
+      <h2>Pronto para Iniciar o Seu Projeto?</h2>
+      <div class="hero-cta">
+        <a class="btn btn-ink" href="/contact/">Contactar a Nossa Equipa</a>
+        <a class="btn btn-ghost" href={wa}>Fale connosco</a>
+      </div>
+    </div>
+  </section>
+</Base>

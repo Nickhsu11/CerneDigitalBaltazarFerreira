@@ -1,0 +1,80 @@
+---
+import Base from "../../layouts/Base.astro";
+import CartBtn from "../../components/CartBtn.astro";
+import { produtos, categorias, rotulo } from "../../data/produtos";
+---
+<Base
+  title="Produtos de Serigrafia — Emulsões, Tintas e Consumíveis | Baltazar Ferreira"
+  description="Compre produtos premium de serigrafia em Portugal: emulsões diazo, tintas têxteis, telas serigráficas, rodos, químicos e consumíveis. Qualidade profissional para resultados superiores."
+  canonical="https://baltazarferreira.com/products"
+>
+  <link slot="head" rel="stylesheet" href="/assets/g3.css" />
+  <section class="hero pg-hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Produtos</span>
+        <h1>Catálogo de Consumíveis Premium</h1>
+        <p class="lede">Emulsões, tintas, preparação e limpeza, telas e rodos: tudo para a produção serigráfica, com telas desde 21Y até 165T.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-tint">
+    <div class="wrap">
+      <h2 class="sr-only">Todos os produtos</h2>
+      <div class="filter rv" role="group" aria-label="Filtrar por categoria">
+        <button class="chip" type="button" data-cat="" aria-pressed="true">Todos<b>{produtos.length}</b></button>
+        {categorias.map((c) => <button class="chip" type="button" data-cat={c} aria-pressed="false">{rotulo[c] ?? c}<b>{produtos.filter((p) => p.categoria === c).length}</b></button>)}
+      </div>
+      <div class="pgrid" id="pgrid">
+        {produtos.map((p, k) => (
+          <article class="pcard rv" style={`--i:${k % 4}`} data-cat={p.categoria}>
+            <figure><img src={p.img} alt={p.alt} loading={k < 4 ? "eager" : "lazy"} width="640" height="480" /><span class="cat">{rotulo[p.categoria] ?? p.categoria}</span></figure>
+            <div class="pbody">
+              <h3><a href={`/products/${p.slug}/`}>{p.nome}</a></h3>
+              <p>{p.desc}</p>
+              <div class="pact">
+                <CartBtn p={p} />
+                <a class="btn btn-line btn-sm" href="/contact/">Pedir Orçamento</a>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-ink">
+    <div class="wrap">
+      <div class="stats" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr))">
+        <div class="stat rv"><span class="num" data-count="15">15</span><p>Produtos no catálogo</p></div>
+        <div class="stat rv" style="--i:1"><span class="num" data-count="4">4</span><p>Categorias: emulsões, tintas, preparação e limpeza, consumíveis</p></div>
+        <div class="stat rv" style="--i:2"><span class="num">21Y–165T</span><p>Telas serigráficas de máxima qualidade e durabilidade</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec cta">
+    <div class="wrap rv">
+      <h2>Não encontra o que procura?</h2>
+      <div class="hero-cta">
+        <a class="btn btn-ink" href="/contact/">Pedir Orçamento</a>
+      </div>
+    </div>
+  </section>
+  <script>
+    const chips = document.querySelectorAll<HTMLButtonElement>(".chip");
+    const cards = document.querySelectorAll<HTMLElement>(".pcard");
+    chips.forEach((c) => c.addEventListener("click", () => {
+      chips.forEach((x) => x.setAttribute("aria-pressed", String(x === c)));
+      cards.forEach((card) => { card.hidden = !!c.dataset.cat && card.dataset.cat !== c.dataset.cat; card.classList.add("in"); });
+    }));
+    document.addEventListener("click", (e) => {
+      const b = (e.target as HTMLElement).closest<HTMLElement>("[data-add-cart]");
+      if (!b) return;
+      b.classList.add("added");
+      const s = b.querySelector("span"); if (s) s.textContent = "Adicionado";
+      setTimeout(() => { b.classList.remove("added"); if (s) s.textContent = "Adicionar ao Carrinho"; }, 1600);
+    });
+  </script>
+</Base>

@@ -1,0 +1,82 @@
+---
+interface Props { title: string; description: string; canonical?: string }
+const { title, description, canonical } = Astro.props;
+const path = Astro.url.pathname;
+const nav = [
+  { t: "Início", h: "/" }, { t: "Sobre Nós", h: "/about/" }, { t: "Serviços", h: "/services/" },
+  { t: "Produtos", h: "/products/" }, { t: "Blog", h: "/blog/" }, { t: "Contacto", h: "/contact/" },
+];
+const cur = (h: string) => (h === "/" ? path === "/" : path.startsWith(h));
+const ftServ = [["Gravação de Quadros", "/services/"], ["Criação de Fotolitos", "/services/"], ["Quadros de Alumínio", "/services/"]];
+const ftProd = [["Borrachas de Serigrafia", "/products/"], ["Telas Serigráficas em Poliester", "/products/"], ["Emulsões", "/products/"]];
+const ftEmp = [["Sobre Nós", "/about/"], ["Serigrafia em Portugal", "/serigrafia-em-portugal/"], ["Blog", "/blog/"], ["FAQ", "/faq/"], ["Contacto", "/contact/"]];
+const wa = "https://wa.me/351934724284?text=Ol%C3%A1!%20Gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20vossos%20produtos%20e%20servi%C3%A7os%20de%20serigrafia.";
+---
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  {canonical && <link rel="canonical" href={canonical} />}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/style.css" />
+  <script is:inline>document.documentElement.className += " js";</script>
+  <slot name="head" />
+</head>
+<body>
+  <a class="skip" href="#conteudo">Saltar para o conteúdo</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Baltazar Ferreira, início">
+        <span class="brand-mark" aria-hidden="true"><i></i></span>Baltazar Ferreira
+      </a>
+      <nav class="nav" aria-label="Principal">
+        {nav.map((n) => <a href={n.h} aria-current={cur(n.h) ? "page" : undefined}>{n.t}</a>)}
+      </nav>
+      <div class="hd-actions">
+        <a class="cart-link" href="/cart/" aria-label="Carrinho de orçamento">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <span class="cart-count" data-cart-count hidden>0</span>
+        </a>
+        <a class="btn btn-accent btn-sm" href="/contact/">Pedir Orçamento</a>
+        <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu">
+          <svg class="b" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="drawer" id="drawer">
+    {nav.map((n) => <a href={n.h} aria-current={cur(n.h) ? "page" : undefined}>{n.t}</a>)}
+    <a class="btn btn-accent" href="/contact/">Pedir Orçamento</a>
+  </div>
+  <main id="conteudo"><slot /></main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="ft-grid">
+        <div class="ft-brand">
+          <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><i></i></span>Baltazar Ferreira</a>
+          <p>Soluções profissionais de serigrafia para a indústria europeia</p>
+          <a class="wa" href={wa}>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.300 2.400 1.500.3.1.5.1.6-.1l.9-1.100c.2-.3.4-.2.6-.1l1.900.9c.3.1.5.2.5.3.100.2.100.800-.100 1.400z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        <div><h3>Serviços</h3><ul>{ftServ.map(([t, h]) => <li><a href={h}>{t}</a></li>)}</ul></div>
+        <div><h3>Produtos</h3><ul>{ftProd.map(([t, h]) => <li><a href={h}>{t}</a></li>)}</ul></div>
+        <div><h3>Empresa</h3><ul>{ftEmp.map(([t, h]) => <li><a href={h}>{t}</a></li>)}</ul></div>
+      </div>
+      <div class="ft-bottom">
+        <span>© 2025 Baltazar Ferreira. Todos os direitos reservados.</span>
+        <span>Praceta Manuel da Fonseca, Loja Dta. Fanqueiro, 2670-367 Loures · <a href="tel:+351934724284">+351 934 724 284</a> · <a href="mailto:bferreiralda@gmail.com">bferreiralda@gmail.com</a></span>
+      </div>
+    </div>
+  </footer>
+  <script is:inline src="/assets/carrinho.js"></script>
+  <script is:inline src="/assets/site.js"></script>
+</body>
+</html>

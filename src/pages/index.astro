@@ -1,0 +1,116 @@
+---
+import Base from "../layouts/Base.astro";
+const wa = "https://wa.me/351934724284?text=Ol%C3%A1!%20Gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20vossos%20produtos%20e%20servi%C3%A7os%20de%20serigrafia.";
+const img = (h: string) => `/assets/img/${h}.webp`;
+const emu = img("f20b694487fbdc0b9294ca5652470ed5"), rod = img("83a92eff4be4a8986e351c0e19f4d076"),
+  tel = img("f4cd813b525d318ac20955b9ea0f3b40"), tin = img("723694ad9521a024a376a5e50bbb878a");
+const servicos = [
+  { t: "Gravação de Quadros", d: "Gravação de alta precisão com detalhes nítidos e resultados profissionais consistentes.", i: "M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2M12 8v8M8 12h8" },
+  { t: "Criação de Fotolitos", d: "Preparação profissional de arte-final com saída de alta resolução para impressão perfeita.", i: "M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM9 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM21 15l-3.1-3.1a2 2 0 0 0-2.8 0L6 21" },
+  { t: "Quadros de Alumínio", d: "Quadros personalizados e tamanhos standard com alta durabilidade.", i: "M3 3h18v18H3zM8 8h8v8H8z" },
+  { t: "Emulsionamento Profissional", d: "Revestimento uniforme para resultados consistentes e qualidade superior.", i: "M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.100 5 13 5 15a7 7 0 0 0 7 7z" },
+];
+const tabs = [
+  { id: "t1", t: "Emulsões & Tintas", im: [[emu, "Emulsões profissionais"], [tin, "Tintas serigráficas"]] },
+  { id: "t2", t: "Telas Serigráficas", im: [[tel, "Telas serigráficas"]] },
+  { id: "t3", t: "Rodos & Acessórios", im: [[rod, "Rodos profissionais"]] },
+  { id: "t4", t: "Químicos & Solventes", im: [[emu, "Químicos e solventes para serigrafia"]] },
+];
+---
+<Base
+  title="Tintas Serigrafia Portugal | Telas, Emulsões e Produtos de Serigrafia — Baltazar Ferreira"
+  description="Baltazar Ferreira: fornecedor de tintas serigrafia em Portugal há 25 anos. Telas serigráficas, emulsões fotopoliméricas, químicos e serviços de gravação de quadros. Entrega nacional e europeia."
+  canonical="https://baltazarferreira.com/"
+>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Soluções Completas de Serigrafia para Portugal e Europa</h1>
+        <p class="lede">Serviços Profissionais e Produtos para Clientes Industriais</p>
+        <div class="hero-cta">
+          <a class="btn btn-accent" href="/services/">Explorar Serviços</a>
+          <a class="btn btn-ghost" href="/products/">Ver Catálogo de Produtos</a>
+        </div>
+      </div>
+      <div class="reg" aria-hidden="false">
+        <figure><img src={emu} alt="Emulsões profissionais" width="672" height="512" /></figure>
+        <figure><img src={tel} alt="Telas serigráficas" loading="lazy" width="672" height="512" /></figure>
+        <figure><img src={rod} alt="Rodos profissionais" loading="lazy" width="672" height="512" /></figure>
+        <figure><img src={tin} alt="Tintas serigráficas" loading="lazy" width="672" height="512" /></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap about">
+      <div class="rv">
+        <span class="eyebrow">Sobre Baltazar Ferreira</span>
+        <h2>Precisão, Fiabilidade, Parceria</h2>
+        <p class="lead">Com anos de experiência técnica, oferecemos soluções completas que combinam qualidade, precisão e fiabilidade para empresas, exemplo disto são os projetos realizados para empresas no setor industrial, incluindo multinacionais.</p>
+        <details class="more">
+          <summary>Ler mais</summary>
+          <div class="more-body">
+            <p>A Baltazar Ferreira é uma empresa familiar especializada em serviços de apoio à serigrafia e fornecimento de produtos profissionais para o setor.</p>
+            <p>O nosso compromisso é estabelecer parcerias de longo prazo, fornecendo suporte técnico especializado e produtos que cumprem os mais elevados padrões europeus de produção.</p>
+          </div>
+        </details>
+      </div>
+      <div class="stats">
+        <div class="stat rv" style="--i:1"><span class="num" data-count="25" data-suffix="+">25+</span><p>Anos de Experiência</p></div>
+        <div class="stat rv" style="--i:2"><span class="num" data-count="500" data-suffix="+">500+</span><p>Vasto número de clientes no setor serigráfico industrial e têxtil.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-tint">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Os Nossos Serviços</span>
+        <h2>Soluções Completas de Serigrafia</h2>
+      </div>
+      <div class="cards">
+        {servicos.map((s, k) => (
+          <article class="card rv" style={`--i:${k}`}>
+            <span class="n">0{k + 1}</span>
+            <div class="card-head"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d={s.i} /></svg></span><h3>{s.t}</h3></div>
+            <p>{s.d}</p>
+            <a class="more-link" href="/services/" aria-label={`Saber Mais: ${s.t}`}>Saber Mais</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-ink">
+    <div class="wrap tabs-wrap" data-tabs>
+      <div class="prod-top rv">
+        <div>
+          <span class="eyebrow">Os Nossos Produtos</span>
+          <h2>Materiais de Alta Qualidade para Serigrafia</h2>
+        </div>
+        <p>Disponibilizamos uma vasta gama de produtos especializados para serigrafia — desde emulsões e tintas a telas, rodos e químicos — para garantir os melhores resultados em cada impressão.</p>
+      </div>
+      <div class="tablist rv" role="tablist" aria-label="Categorias de produtos">
+        {tabs.map((t, k) => <button class="tab" role="tab" id={`tab-${t.id}`} aria-controls={t.id} aria-selected={k === 0 ? "true" : "false"} tabindex={k === 0 ? 0 : -1} type="button">{t.t}</button>)}
+      </div>
+      <div>
+        {tabs.map((t, k) => (
+          <div class={`panel${k === 0 ? " on" : ""}${t.im.length > 1 ? " two" : ""}`} id={t.id} role="tabpanel" aria-labelledby={`tab-${t.id}`} hidden={k !== 0}>
+            {t.im.map(([src, alt]) => <figure><img src={src} alt={alt} loading="lazy" width="672" height="512" /></figure>)}
+          </div>
+        ))}
+      </div>
+      <div><a class="btn btn-accent" href="/products/">Ver Todos os Produtos</a></div>
+    </div>
+  </section>
+
+  <section class="sec cta">
+    <div class="wrap rv">
+      <h2>Pronto para Iniciar o Seu Projeto?</h2>
+      <div class="hero-cta">
+        <a class="btn btn-ink" href="/contact/">Contactar a Nossa Equipa</a>
+        <a class="btn btn-ghost" href={wa}>Fale connosco</a>
+      </div>
+    </div>
+  </section>
+</Base>

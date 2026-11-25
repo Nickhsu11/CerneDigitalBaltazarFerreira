@@ -1,0 +1,94 @@
+---
+import Base from "../../layouts/Base.astro";
+import { artigos, artigoCompleto as A, localImg, dataPt, href, etiquetas, icon } from "../../data/blog";
+export function getStaticPaths() {
+  return [{ params: { slug: A.slug } }];
+}
+const meta = artigos.find((a) => a.slug === A.slug)!;
+const capa = localImg(meta.img);
+const rel = A.relacionados.map((s) => artigos.find((a) => a.slug === s)!).map((a) => ({ ...a, local: localImg(a.img) }));
+---
+<Base title={A.titulo} description={A.meta} canonical={`https://baltazarferreira.com/blog/${A.slug}`}>
+  <link slot="head" rel="stylesheet" href="/assets/g4.css" />
+  <main id="conteudo">
+    <section class="hero hero-sm">
+      <div class="wrap">
+        <div>
+          <a class="back" href="/blog/">← Voltar ao blog</a>
+          <h1>{A.h1}</h1>
+          <div class="post-meta">
+            <span><time datetime={meta.data}>{dataPt(meta.data)}</time></span><span>{meta.min} min de leitura</span>
+          </div>
+          <ul class="hero-badges">{meta.tags.map((t) => <li>{etiquetas[t]}</li>)}</ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="wrap art">
+        <nav class="toc" aria-label="Neste artigo">
+          <strong>Neste artigo</strong>
+          <ol>
+            <li><a href="#definicao">O que é serigrafia</a></li>
+            <li><a href="#passos">Passo a passo</a></li>
+            <li><a href="#vantagens">Vantagens</a></li>
+            <li><a href="#equipamentos">Equipamentos</a></li>
+            <li><a href="#hoje">Serigrafia em Portugal hoje</a></li>
+          </ol>
+        </nav>
+        <article class="prose">
+          <figure class="cover rv"><img src={capa ?? "/assets/img/a3ea9f3acd5ee2fdb5ef0e020a9fc63f.webp"} alt={meta.titulo} width="1100" height="550" /></figure>
+          <p class="abre rv">{A.abertura}</p>
+
+          <h2 id="definicao" class="rv">O que é Serigrafia? Definição Simples</h2>
+          {A.definicao.map((p) => <p class="rv">{p}</p>)}
+
+          <h2 id="passos" class="rv">Como Funciona a Serigrafia Passo a Passo</h2>
+          <ol class="timeline">
+            {A.passos.map(([t, d], i) => <li class="rv" style={`--i:${i}`}><div><b>{t}</b><p>{d}</p></div></li>)}
+          </ol>
+
+          <h2 id="vantagens" class="rv">Vantagens da Serigrafia em Portugal</h2>
+          <div class="cards three">
+            {A.vantagens.map(([t, d, ic], i) => (
+              <div class="card rv" style={`--i:${i % 3}`}>
+                <div class="card-head"><span class="ico"><Fragment set:html={icon(ic as any)} /></span><h3>{t}</h3></div>
+                <p>{d}</p>
+              </div>
+            ))}
+          </div>
+
+          <h2 id="equipamentos" class="rv">Equipamentos Essenciais para Começar</h2>
+          <div class="callout rv"><p>{A.equipamentos}</p></div>
+
+          <h2 id="hoje" class="rv">A Serigrafia em Portugal Hoje</h2>
+          {A.hoje.map((p) => <p class="rv">{p}</p>)}
+
+          <div class="author rv">
+            <span class="av" aria-hidden="true">B</span>
+            <p><b>{A.autor[0]}</b>{A.autor[1]}</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec sec-tint">
+      <div class="wrap">
+        <div class="sec-head rv"><h2>Artigos Relacionados</h2></div>
+        <div class="posts">
+          {rel.map((a, i) => (
+            <article class="post rv" style={`--i:${i}`}>
+              {a.local
+                ? <div class="post-img"><img src={a.local} alt={a.titulo} width="640" height="400" loading="lazy" /></div>
+                : <div class="post-img ph" aria-hidden="true"><Fragment set:html={icon("layers")} /></div>}
+              <div class="post-body">
+                <h3><a href={href(a)} style="color:inherit;text-decoration:none">{a.titulo}</a></h3>
+                <p>{a.min} min de leitura</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

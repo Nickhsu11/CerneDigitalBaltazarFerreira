@@ -1,0 +1,98 @@
+---
+import Base from "../../layouts/Base.astro";
+const wa = "https://wa.me/351934724284?text=Ol%C3%A1!%20Gostaria%20de%20obter%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20vossos%20produtos%20e%20servi%C3%A7os%20de%20serigrafia.";
+const img = (h: string) => `/assets/img/${h}.webp`;
+const rod = img("83a92eff4be4a8986e351c0e19f4d076"), tel = img("f4cd813b525d318ac20955b9ea0f3b40");
+---
+<Base
+  title="Contacto — Peça o Seu Orçamento | Baltazar Ferreira"
+  description="Entre em contacto com a Baltazar Ferreira para serviços de serigrafia e produtos em Portugal. Estamos em Loures, disponíveis de segunda a sexta das 9h às 18h."
+  canonical="https://baltazarferreira.com/contact"
+>
+  <link slot="head" rel="stylesheet" href="/assets/g2.css" />
+  <section class="hero slim">
+    <div class="wrap">
+      <div>
+        <h1>Contacto</h1>
+        <p class="lede">Peça o seu orçamento: Seg - Sex, 9:00 - 18:00.</p>
+        <div class="hero-cta"><a class="btn btn-accent" href="#formulario">Entre em Contacto</a><a class="btn btn-ghost" href={wa}>Fale connosco</a></div>
+      </div>
+      <div class="reg">
+        <figure><img src={tel} alt="Telas serigráficas" width="672" height="512" /></figure>
+        <figure><img src={rod} alt="Rodos profissionais" loading="lazy" width="672" height="512" /></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-tint">
+    <div class="wrap">
+      <div class="sec-head rv"><h2>Onde Estamos</h2></div>
+      <div class="info-grid">
+        <div class="card info rv"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0zM12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></span><div><h3>Onde estamos</h3><address>Praceta Manuel da Fonseca, Loja Dta. Fanqueiro 2670-367 LOURES</address></div></div>
+        <div class="card info rv" style="--i:1"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><div><h3>Telefone</h3><p><a href="tel:+351934724284">+351 934 724 284</a></p></div></div>
+        <div class="card info rv" style="--i:2"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM22 7l-10 6L2 7"/></svg></span><div><h3>Email</h3><p><a href="mailto:bferreiralda@gmail.com">bferreiralda@gmail.com</a></p></div></div>
+        <div class="card info rv" style="--i:3"><span class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20zM12 6v6l4 2"/></svg></span><div><h3>Horário</h3><p>Seg - Sex: 9:00 - 18:00</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec map-sec" aria-labelledby="mapa-h">
+    <div class="wrap rv">
+      <h2 id="mapa-h">Onde estamos</h2>
+      <p>Praceta Manuel da Fonseca, Loja Dta. Fanqueiro, 2670-367 Loures</p>
+      <div class="map-frame">
+        <iframe title="Localização: Praceta Manuel da Fonseca, Loja Dta. Fanqueiro, 2670-367 Loures" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3111.1234567890!2d-9.1720813!3d38.8403023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDUwJzI1LjEiTiA5wrAxMCcxOS41Ilc!5e0!3m2!1spt!2spt!4v1640995200000!5m2!1spt!2spt"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="formulario">
+    <div class="wrap contact-grid">
+      <div class="rv">
+        <span class="eyebrow">Orçamento</span>
+        <h2>Entre em Contacto</h2>
+        <p>Conte-nos sobre o seu projeto ou pedido. Também pode falar connosco diretamente pelo WhatsApp.</p>
+        <a class="btn btn-ink" href={wa}>Fale connosco</a>
+      </div>
+      <form class="form rv" style="--i:1" action="#" onsubmit="return false" novalidate>
+        <label>Nome Completo *<input type="text" name="fullName" maxlength="100" placeholder="O seu nome completo" required autocomplete="name" /></label>
+        <div class="row">
+          <label>Primeiro Nome *<input type="text" name="firstName" maxlength="60" placeholder="Primeiro nome" required autocomplete="given-name" /></label>
+          <label>Último Nome *<input type="text" name="lastName" maxlength="60" placeholder="Último nome" required autocomplete="family-name" /></label>
+        </div>
+        <label>Email *<input type="email" name="email" maxlength="120" placeholder="seuemail@exemplo.com" required autocomplete="email" /></label>
+        <label>Mensagem *<textarea name="message" maxlength="500" placeholder="Conte-nos sobre o seu projeto ou pedido..." required></textarea><span class="hint">Máximo 500 caracteres.</span></label>
+        <div class="cart-box" data-cart-list hidden><h3>Produtos no seu pedido</h3><ul></ul></div>
+        <button class="btn btn-accent" type="button">ENVIAR MENSAGEM</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="sec cta">
+    <div class="wrap rv">
+      <h2>Prefere falar já connosco?</h2>
+      <div class="hero-cta">
+        <a class="btn btn-ink" href="tel:+351934724284">+351 934 724 284</a>
+        <a class="btn btn-ghost" href={wa}>Fale connosco</a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function(){
+      var box=document.querySelector('[data-cart-list]'); if(!box||!window.Carrinho) return;
+      var ul=box.querySelector('ul');
+      function draw(){
+        var l=window.Carrinho.get(); ul.textContent=''; box.hidden=!l.length;
+        l.forEach(function(p){
+          var li=document.createElement('li'),s=document.createElement('span'),b=document.createElement('button');
+          s.textContent=p.name+' × '+p.quantity; b.type='button'; b.textContent='Remover';
+          b.setAttribute('aria-label','Remover '+p.name);
+          b.onclick=function(){window.Carrinho.remove(p.id)};
+          li.appendChild(s); li.appendChild(b); ul.appendChild(li);
+        });
+      }
+      draw(); document.addEventListener('carrinho:change',draw);
+    })();
+  </script>
+</Base>
